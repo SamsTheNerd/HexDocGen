@@ -120,9 +120,9 @@ def render_book(
     }
 
     for filename, template in templates.items():
-        file = template.render(template_args)
-        stripped_file = strip_empty_lines(file)
-        write_to_path(output_dir / filename, stripped_file)
+        file = template.render(template_args).encode("utf-8")
+        # stripped_file = strip_empty_lines(file)
+        write_to_path(output_dir / filename, file)
 
     if props.template.static_dir:
         shutil.copytree(props.template.static_dir, output_dir, dirs_exist_ok=True)

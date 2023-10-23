@@ -3,10 +3,8 @@
   {% set page_anchor_id = entry.id.path ~ "@" ~ page.anchor %}
 
   {#- page content (not required because EmptyPage uses this template directly) #}
-  <div id="{{ page_anchor_id }}">
-    {% block body scoped %}{% endblock %}
-  </div>
+  \label{sec: {{ page_anchor_id }}}
+  {% block body scoped %}{% endblock %}
 {% else %}
   {{ self.body() }}
 {% endif %}
-<br />

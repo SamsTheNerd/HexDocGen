@@ -32,7 +32,7 @@ def _hexdoc_block(link_bases: BookLinkBases, value: Any) -> str:
         case LocalizedStr() | str():
             # use Markup to tell Jinja not to escape this string for us
             lines = str(value).splitlines()
-            return Markup("<br />".join(Markup.escape(line) for line in lines))
+            return Markup("\n\n".join(Markup.escape(line) for line in lines))
 
         case FormatTree():
             with HTMLStream() as out:

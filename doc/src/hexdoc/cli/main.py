@@ -91,6 +91,7 @@ def render(
     env = create_jinja_env(props)
 
     templates = {
+        "lahex.tex": env.get_template(props.template.main),
         "index.html": env.get_template(props.template.main),
         "index.css": env.get_template(props.template.style),
     }

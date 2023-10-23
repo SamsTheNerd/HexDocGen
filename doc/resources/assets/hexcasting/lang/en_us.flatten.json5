@@ -22,7 +22,7 @@
       // use the span tag to make everything after it wrap with the toc button
       // or put it at the very end to make the button wrap by itself
       // either way, do NOT remove it entirely
-      title: "Table of <span class=\"nobr\">Contents",
+      title: "Table of Contents",
       toggle_all: "Toggle all",
     },
 

@@ -1,18 +1,14 @@
-<div class="container">
-  {# big landing text box - this is optional so addons can disable it if they want #}
-  {% if show_landing_text %}
-    <header class="jumbotron">
-      <h1 class="book-title">{{ book.name }}</h1>
-      {{ book.landing_text|hexdoc_block }}
-    </header>
-  {% endif %}
+{% if show_landing_text %}
+  \title{ {{ book.name }} }
+  {{ book.landing_text|hexdoc_block }}\\
+{% endif %}
 
-  {% include "components/table_of_contents.html.jinja" %}
+{% include "components/table_of_contents.html.jinja" %}
 
-  {# actual book content (ie. all the categories) #}
-  <main class="book-body">
-    {% for category in book.categories.values() if category.entries.values() +%}
-      {% include "category.html.jinja" %}
-    {% endfor +%}
-  </main>
-</div>
+
+{% for category in book.categories.values() if category.entries.values() +%}
+  {% include "category.html.jinja" %}
+{% endfor +%}
+
+
+

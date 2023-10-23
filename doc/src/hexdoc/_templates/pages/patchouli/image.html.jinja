@@ -2,7 +2,7 @@
 {% import "macros/recipes.html.jinja" as recipe_macros with context %}
 
 {% block inner_body %}
-  <p class="img-wrapper">
+  {# <p class="img-wrapper">
     {% for image in page.images %}
       {{
         recipe_macros.render_texture(
@@ -12,6 +12,7 @@
         )
       }}
     {% endfor %}
-  </p>
+  </p> #}
+  $$ image of {{ page.title or image.file_id }} depicted here in book $$
   {{ super() }}
 {% endblock inner_body %}

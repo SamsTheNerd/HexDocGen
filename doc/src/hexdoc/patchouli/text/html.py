@@ -21,10 +21,16 @@ class HTMLElement:
     attributes: dict[str, Any]
 
     def __enter__(self) -> None:
-        self.stream.write(f"<{self.name}{attributes_to_str(self.attributes)}>")
+        match self.name:
+            case _: 
+                self.stream.write(f"")
 
     def __exit__(self, *_: Any) -> None:
-        self.stream.write(f"</{self.name}>")
+        match self.name:
+            case "p":
+                self.stream.write(f"\\\\")
+            case _: 
+                self.stream.write(f"")
 
 
 class HTMLStream(io.StringIO):

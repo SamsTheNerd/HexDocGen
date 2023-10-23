@@ -311,9 +311,10 @@ class LinkStyle(Style, frozen=True):
     def element(self, out: HTMLStream, link_bases: BookLinkBases) -> HTMLElement:
         match self.value:
             case BookLink(as_tuple=key) as book_link:
-                if key not in link_bases:
-                    raise ValueError(f"broken link: {book_link}")
-                href = link_bases[key] + book_link.fragment
+                # if key not in link_bases:
+                #     raise ValueError(f"broken link: {book_link}")
+                # href = link_bases[key] + book_link.fragment
+                href = ""
             case str(href):
                 pass
         return out.element("a", href=href)

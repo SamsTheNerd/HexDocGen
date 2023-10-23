@@ -1,0 +1,3316 @@
+\documentclass[12pt]{article}
+
+\usepackage{xeCJK}
+
+\usepackage{hyperref}
+
+
+%\fontsize{font size}{vertsize (usually 1.2x)}\selectfont
+
+\begin{document}
+
+
+
+\begin{quote}
+  \section*{ This is the online version of the Hex Casting documentation.\\ }
+  Embedded images and patterns are included, but not crafting recipes or items. There$\rq$s an in-game book for those.\\\\
+    Additionally, this is built from the latest code on GitHub. It may describe newer features that you may not necessarily have, even on the latest Modrinth/CurseForge version!\\\\
+  Entries which are blurred are spoilers. Click to reveal them, but be aware that they may spoil endgame progression. Alternatively, click here to get a version with all spoilers showing.\\
+
+\end{quote}
+  \title{ Hex Notebook }
+  I seem to have discovered a new method of magical arts, in which one draws patterns strange and wild onto a hexagonal grid. It fascinates me. I$\rq$ve decided to start a journal of my thoughts and findings.\\Forum Link\\\\
+
+\section*{ Table of Contents }
+
+
+    \hyperref[ sec:basics ]{ Getting Started}
+
+    \begin{itemize}
+        \item\hyperref[ sec:basics/media ]{ Media}
+        \item\hyperref[ sec:basics/geodes ]{ Geodes}
+        \item\hyperref[ sec:basics/couldnt_cast ]{ A Frustration}
+        \item\hyperref[ sec:basics/start_to_see ]{ WHAT DID I SEE}
+    \end{itemize}
+    \hyperref[ sec:casting ]{ Hex Casting}
+
+    \begin{itemize}
+        \item\hyperref[ sec:casting/101 ]{ Hex Casting 101}
+        \item\hyperref[ sec:casting/vectors ]{ A Primer On Vectors}
+        \item\hyperref[ sec:casting/mishaps ]{ Mishaps}
+        \item\hyperref[ sec:casting/stack ]{ The Stack}
+        \item\hyperref[ sec:casting/naming ]{ Naming Actions}
+        \item\hyperref[ sec:casting/influences ]{ Influences}
+        \item\hyperref[ sec:casting/mishaps2 ]{ Enlightened Mishaps}
+    \end{itemize}
+    \hyperref[ sec:items ]{ Items}
+
+    \begin{itemize}
+        \item\hyperref[ sec:items/amethyst ]{ Amethyst}
+        \item\hyperref[ sec:items/staff ]{ Staves}
+        \item\hyperref[ sec:items/lens ]{ Scrying Lens}
+        \item\hyperref[ sec:items/thought_knot ]{ Thought-Knot}
+        \item\hyperref[ sec:items/focus ]{ Focus}
+        \item\hyperref[ sec:items/abacus ]{ Abacus}
+        \item\hyperref[ sec:items/spellbook ]{ Spellbook}
+        \item\hyperref[ sec:items/scroll ]{ Scrolls}
+        \item\hyperref[ sec:items/slate ]{ Slates}
+        \item\hyperref[ sec:items/hexcasting ]{ Casting Items}
+        \item\hyperref[ sec:items/phials ]{ Phials of Media}
+        \item\hyperref[ sec:items/pigments ]{ Pigments}
+        \item\hyperref[ sec:items/edified ]{ Edified Trees}
+        \item\hyperref[ sec:items/jeweler_hammer ]{ Jeweler$\rq$s Hammer}
+        \item\hyperref[ sec:items/decoration ]{ Decorative Blocks}
+    \end{itemize}
+    \hyperref[ sec:greatwork ]{ The Great Work}
+
+    \begin{itemize}
+        \item\hyperref[ sec:greatwork/the_work ]{ The Work}
+        \item\hyperref[ sec:greatwork/brainsweeping ]{ On The Flaying of Minds}
+        \item\hyperref[ sec:greatwork/spellcircles ]{ Spell Circles}
+        \item\hyperref[ sec:greatwork/impetus ]{ Impeti}
+        \item\hyperref[ sec:greatwork/directrix ]{ Directrices}
+        \item\hyperref[ sec:greatwork/akashiclib ]{ Akashic Libraries}
+        \item\hyperref[ sec:greatwork/quenching_allays ]{ Quenching Allays}
+        \item\hyperref[ sec:greatwork/fanciful_staves ]{ Fanciful Staves}
+    \end{itemize}
+    \hyperref[ sec:lore ]{ Lore}
+
+    \begin{itemize}
+        \item\hyperref[ sec:lore/cardamom1 ]{ Cardamom Steles, \#1}
+        \item\hyperref[ sec:lore/cardamom2 ]{ Cardamom Steles, \#2}
+        \item\hyperref[ sec:lore/cardamom3 ]{ Cardamom Steles, \#3}
+        \item\hyperref[ sec:lore/cardamom4 ]{ Cardamom Steles, \#4}
+        \item\hyperref[ sec:lore/cardamom5 ]{ Cardamom Steles, \#5}
+        \item\hyperref[ sec:lore/experiment1 ]{ Wooleye Instance Notes}
+        \item\hyperref[ sec:lore/experiment2 ]{ Wooleye Interview Logs}
+        \item\hyperref[ sec:lore/inventory ]{ Restoration Log \#72}
+    \end{itemize}
+    \hyperref[ sec:interop ]{ Cross-Mod Compatibility}
+
+    \begin{itemize}
+        \item\hyperref[ sec:interop/interop ]{ Cross-Mod Interations}
+        \item\hyperref[ sec:interop/pehkui ]{ Pehkui}
+    \end{itemize}
+    \hyperref[ sec:patterns ]{ Patterns}
+
+    \begin{itemize}
+        \item\hyperref[ sec:patterns/readers_guide ]{ How to Read This Section}
+        \item\hyperref[ sec:patterns/basics ]{ Basic Patterns}
+        \item\hyperref[ sec:patterns/numbers ]{ Number Literals}
+        \item\hyperref[ sec:patterns/math ]{ Mathematics}
+        \item\hyperref[ sec:patterns/consts ]{ Constants}
+        \item\hyperref[ sec:patterns/stackmanip ]{ Stack Manipulation}
+        \item\hyperref[ sec:patterns/logic ]{ Logical Operators}
+        \item\hyperref[ sec:patterns/entities ]{ Entities}
+        \item\hyperref[ sec:patterns/lists ]{ List Manipulation}
+        \item\hyperref[ sec:patterns/patterns_as_iotas ]{ Escaping Patterns}
+        \item\hyperref[ sec:patterns/readwrite ]{ Reading and Writing}
+        \item\hyperref[ sec:patterns/advanced_math ]{ Advanced Mathematics}
+        \item\hyperref[ sec:patterns/sets ]{ Sets}
+        \item\hyperref[ sec:patterns/meta ]{ Meta-Evaluation}
+        \item\hyperref[ sec:patterns/circle ]{ Spell Circle Patterns}
+        \item\hyperref[ sec:patterns/akashic_patterns ]{ Akashic Patterns}
+    \end{itemize}
+    \hyperref[ sec:patterns/spells ]{ Spells}
+
+    \begin{itemize}
+        \item\hyperref[ sec:patterns/spells/itempicking ]{ Working with Items}
+        \item\hyperref[ sec:patterns/spells/basic ]{ Basic Spells}
+        \item\hyperref[ sec:patterns/spells/blockworks ]{ Block Manipulation}
+        \item\hyperref[ sec:patterns/spells/nadirs ]{ Nadirs}
+        \item\hyperref[ sec:patterns/spells/hexcasting ]{ Crafting Casting Items}
+        \item\hyperref[ sec:patterns/spells/sentinels ]{ Sentinels}
+        \item\hyperref[ sec:patterns/spells/colorize ]{ Internalize Pigment}
+        \item\hyperref[ sec:patterns/spells/flight ]{ Flight}
+    \end{itemize}
+    \hyperref[ sec:patterns/great_spells ]{ Great Spells}
+
+    \begin{itemize}
+        \item\hyperref[ sec:patterns/great_spells/create_lava ]{ Create Lava}
+        \item\hyperref[ sec:patterns/great_spells/zeniths ]{ Zeniths}
+        \item\hyperref[ sec:patterns/great_spells/weather_manip ]{ Weather Manipulation}
+        \item\hyperref[ sec:patterns/great_spells/altiora ]{ Altiora}
+        \item\hyperref[ sec:patterns/great_spells/teleport ]{ Greater Teleport}
+        \item\hyperref[ sec:patterns/great_spells/greater_sentinel ]{ Summon Greater Sentinel}
+        \item\hyperref[ sec:patterns/great_spells/make_battery ]{ Craft Phial}
+        \item\hyperref[ sec:patterns/great_spells/brainsweep ]{ Flay Mind}
+    \end{itemize}
+\newpage
+
+
+
+\label{sec:basics}
+
+\section*{Getting Started}
+  The practitioners of this art would cast their so-called Hexes by drawing strange patterns in the air with a Staff -- or craft powerful magical items to do the casting for them. How might I do the same?\\
+
+
+
+\label{sec:basics/media}
+\subsection*{Media}
+
+
+  
+    Media is a form of mental energy external to a mind. All living creatures generate trace amounts of media when thinking about anything; after the thought is finished, the media is released into the environment.\\The art of casting Hexes is all about manipulating media to do your bidding.\\
+
+
+  
+    Media can exert influences on other media-- the strength and type of influence can be manipulated by drawing media out into patterns.\\Scholars of the art used a concentrated blob of media on the end of a stick: by waving it in the air in precise configurations, they were able to manipulate enough media with enough precision to influence the world itself, in the form of a Hex.\\
+
+
+  
+    Sadly, even a fully sentient being (like myself, presumably) can only generate miniscule amounts of media. It would be quite impractical to try and use my own brainpower to cast Hexes.\\But legend has it that there are underground deposits where media slowly accumulates, growing into crystalline forms.\\If I could just find one of those...\\
+
+\newpage
+
+\label{sec:basics/geodes}
+\subsection*{Geodes}
+
+
+  
+    Aha! While mining deep underground, I found an enormous geode resonating with energy-- energy which pressed against my skull and my thoughts. And now, I hold that pressure in my hand, in solid form. That proves it. This must be the place spoken about in legends where media accumulates.\\These amethyst crystals must be a convenient, solidified form of Media.\\
+
+
+  
+    It appears that, in addition to the Amethyst Shards I have seen in the past, these crystals can also drop bits of powdered Amethyst Dust, as well as these Charged Amethyst Crystals. It looks like I$\rq$ll have a better chance of finding the Charged Amethyst Crystals by using a Fortune pickaxe.\\
+
+
+  
+    As I take the beauty of the crystal in, I can feel connections flashing wildly in my mind. It$\rq$s like the media in the air is entering me, empowering me, elucidating me... It feels wonderful.\\Finally, my study into the arcane is starting to make some sense!\\Let me reread those old legends again, now that I know what I$\rq$m looking at.\\
+
+\newpage
+
+\label{sec:basics/couldnt_cast}
+\subsection*{A Frustration}
+
+
+  
+    Argh! Why won$\rq$t it let me cast the spell?!\\The scroll I found rings with authenticity. I can feel it humming in the scroll-- the pattern is true, or as true as it can be. The spell is right there.\\But it feels as if it$\rq$s on the other side of some thin membrane. I called it-- it tried to manifest-- yet it COULD NOT.\\
+
+
+  
+    It felt like the barrier may have weakened ever so slightly from the force that I exerted on the spell; yet despite my greatest efforts-- my deepest focus, my finest amethyst, my precisest drawings-- it refuses to cross the barrier. It$\rq$s maddening.\\This is where my arcane studies end? Cursed by impotence, cursed to lose my rightful powers?\\I should take a deep breath. I should meditate on what I have learned, even if it wasn$\rq$t very much...\\
+
+
+  
+    ...After careful reflection... I have discovered a change in myself.\\It seems... in lieu of amethyst, I$\rq$ve unlocked the ability to cast spells using my own mind and life energy-- just as I read of in the legends of old.\\I$\rq$m not sure why I can now. It$\rq$s just... the truth-knowledge-burden was always there, and I see it now. I know it. I bear it.\\Fortunately, I feel my limits as well-- I would get approximately two Charged Amethyst$\rq$s worth of media out of my health at its prime.\\
+
+
+  
+    I shudder to even consider it-- I$\rq$ve kept my mind mostly intact so far, in my studies. But the fact is-- I form one side of a tenuous link.\\I$\rq$m connected to some other side-- a side whose boundary has thinned from that trauma. A place where simple actions spell out eternal glory.\\Is it so wrong, to want it for myself?\\
+
+\newpage
+
+\label{sec:basics/start_to_see}
+\subsection*{WHAT DID I SEE}
+
+
+  
+    The texts weren$\rq$t lying. Nature took its due.\\
+
+
+  
+    That... that was...\\...that was one of the worst things I$\rq$ve ever experienced. I offered my plan to Nature, and got a firm smile and a tearing sensation in return-- a piece of myself breaking away, like amethyst dust in the rain.\\I feel lucky to have survived, much less have the sagacity to write this-- I should declare the matter closed, double-check my math before I cast any more Hexes, and never make such a mistake again.\\
+
+
+  
+    ...But.\\But for the scarcest instant, that part of myself... it saw... something. A place-- a design, perhaps? (Such distinctions didn$\rq$t seem to matter in the face of... that.)\\And a... a membrane-barrier-skin-border, separating myself from a realm of raw thought-flow-light-energy. I remember-- I saw-thought-recalled-felt-- the barrier fuzzing at its edges, just so slightly.\\I wanted through.\\
+
+
+  
+    I shouldn$\rq$t. I know I shouldn$\rq$t. It$\rq$s dangerous. It$\rq$s too dangerous. The force required... I$\rq$d have to bring myself within a hair$\rq$s breadth of Death itself with a single stroke.\\But I$\rq$m. So. Close.\\This is the culmination of my art. This is the Enlightenment I$\rq$ve been seeking. \\I want more. I need to see it again. I will see it.\\What is my mortal mind against immortal glory?\\
+
+\newpage
+
+\label{sec:casting}
+
+\section*{Hex Casting}
+  I$\rq$ve started to understand how the old masters cast their Hexes! It$\rq$s a bit complicated, but I$\rq$m sure I can figure it out. Let$\rq$s see...\\
+
+
+
+\label{sec:casting/101}
+\subsection*{Hex Casting 101}
+
+
+  
+    Casting a Hex is quite difficult-- no wonder this art was lost to time! I$\rq$ll have to re-read my notes carefully.\\I can start a Hex by pressing Use Item/Place Block with a Staff in my hand-- this will cause a hexagonal grid of dots to appear in front of me. Then I can click and drag from dot to dot to draw patterns in the media of the grid; finishing a pattern will run its corresponding action (more on that later).\\
+
+
+  
+    Once I$\rq$ve drawn enough patterns to cast a spell, the grid will disappear as the media I$\rq$ve stored up is released. Holding Sneak while using my staff will also clear the grid.\\So how do patterns work? In short:\\Patterns will execute...\\Actions, which manipulate...\\The Stack, which is a list of...\\Iotas, which are simply units of information.\\
+
+
+  
+    First, patterns. These are essential-- they$\rq$re what I use to manipulate the media around me. Certain patterns, when drawn, will cause actions to happen. Actions are what actually do the magic; all patterns influence media in particular ways, and when those influences end up doing something useful, we call it an action.\\Media can be fickle: if I draw an invalid pattern, I$\rq$ll get some garbage result somewhere on my stack (read on...)\\
+
+
+  \subsubsection*{An Example}
+
+    Pattern: $qaq$\\
+    Pattern: $qaq$\\
+      It$\rq$s interesting to note that the rotation of a pattern doesn$\rq$t seem to matter at all. These two patterns both perform an action called Mind$\rq$s Reflection, for example.\\
+
+
+
+  
+    A Hex is cast by drawing (valid) actions in sequence. Each action might do one of a few things:\\Gather some information about the environment, leaving it on the top of the stack;\\manipulate the info gathered (e.g. adding two numbers); or\\perform some magical effect, like summoning lightning or an explosion. (These actions are called $\rq\rq$spells.$\rq\rq$)\\When I start casting a Hex, it creates an empty stack. Actions manipulate the top of that stack.\\
+
+
+  
+    For example, Mind$\rq$s Reflection will create an iota representing me, the caster, and add it to the top of the stack. Compass Purification will take the iota at the top the stack, if it represents an entity, and transform it into an iota representing that entity$\rq$s location.\\So, drawing those patterns in that order would result in an iota on the stack representing my position.\\
+
+
+  
+    Iotas can represent things like myself or my position, but there are several other types I can manipulate with Actions. Here$\rq$s a comprehensive list:\\Numbers (which some legends called $\rq\rq$doubles$\rq\rq$);\\Vectors, a collection of three numbers representing a position, movement, or direction in the world;\\Booleans or $\rq\rq$bools$\rq\rq$ for short, representing an abstract True or False,\\
+
+
+  
+    \\Entities, like myself, chickens, and minecarts;\\Influences, peculiar types of iota that seem to represent abstract ideas;\\Patterns themselves, used for crafting magic items and truly mind-boggling feats like spells that cast other spells; and\\A list of several of the above, gathered into a single iota.\\
+
+
+  
+    Of course, there$\rq$s no such thing as a free lunch. All spells, and certain other actions, require media as payment.\\The best I can figure, a Hex is a little bit like a plan of action presented to Nature-- in this analogy, the media is used to provide the arguments to back it up, so Nature will accept your plan and carry it out.\\
+
+
+  
+    That aside, it doesn$\rq$t seem like anyone has done much research on exactly how much any particular piece of amethyst is valued. The best I can tell, an Amethyst Shard is worth about five pieces of Amethyst Dust, and a Charged Amethyst Crystal is worth about ten.\\Strangely enough, it seems like no other form of amethyst is suitable to be used in the casting of a Hex. I suspect that whole blocks or crystals are too solid to be easily unraveled into media.\\
+
+
+  
+    It$\rq$s also worth noting that each action will consume the media it needs immediately, rather than all at once when the Hex finishes. Also, an action will always consume entire items-- an action that only requires one Amethyst Dust$\rq$s worth of media will consume an entire Charged Amethyst Crystal, if that$\rq$s all that$\rq$s present in my inventory.\\Thus, it might be a good idea to bring dust for spellcasting too-- waste not, want not...\\
+
+
+  
+    I should also be careful to make sure I actually have enough Amethyst in my inventory-- some old texts say that Nature is happy to use one$\rq$s own mind as payment instead. They describe the feeling as awful but strangely euphoric, $\rq\rq$[...] an effervescent dissolution into light and energy...$\rq\rq$ Perhaps that$\rq$s why all the old practitioners of the art went mad. I can$\rq$t imagine burning pieces of my mind for power is healthy.\\
+
+
+  
+    Maybe something$\rq$s changed, though. In my experiments, I$\rq$ve never managed to do it; if I run out of media, the spell will simply fail to cast, as if some barrier is blocking it from harming me. \\It would be interesting to get to the bottom of that mystery, but for now I suppose it$\rq$ll keep me safe.\\
+
+
+  
+      I have also found an amusing tidbit on why so many practitioners of magic in general seem to go mad, which I may like as some light and flavorful reading not canonical to my world.\\Content Warning: some body horror and suggestive elements.\\
+
+  \href{ https://goblinpunch.blogspot.com/2014/05/a-digression-about-wizards.html }{ Goblin Punch }
+
+
+  
+    Finally, it seems spells have a maximum range of influence, about 32 blocks from my position. Trying to affect anything outside of that will cause the spell to fail.\\Despite this, if I have a player$\rq$s reference, I can affect them from anywhere. This only applies to affecting them directly, though; I cannot use this to affect the world around them if they$\rq$re outside of my range.
+
+I ought to be careful when giving out a reference like that. While friendly Hexcasters could use them to great effect and utility, I shudder to think of what someone malicious might do with this.\\
+
+\newpage
+
+\label{sec:casting/vectors}
+\subsection*{A Primer On Vectors}
+
+
+  
+      It seems I will need to be adroit with vectors if I am to get anywhere in my studies. I have compiled some resources here on vectors if I find I do not know how to work with them.\\First off, an enlightening video on the topic.\\
+
+  \href{ https://www.youtube.com/watch?v=fNk_zzaMoSs }{ 3blue1brown }
+
+
+  
+    Additionally, it seems that the mages who manipulated Psi energy (the so-called $\rq\rq$spellslingers$\rq\rq$), despite their poor naming sense, had some quite-effective lessons on vectors to teach their acolytes. I$\rq$ve taken the liberty of linking to one of their texts on the next page.\\They seem to have used different language for their spellcasting:\\A $\rq\rq$Spell Piece$\rq\rq$ was their name for an action;\\a $\rq\rq$Trick$\rq\rq$ was their name for a spell; and\\an $\rq\rq$Operator$\rq\rq$ was their name for a non-spell action.\\
+
+
+  
+      Link here.\\
+
+  \href{ https://psi.vazkii.us/codex.php\#vectorPrimer }{ Psi Codex }
+
+\newpage
+
+\label{sec:casting/mishaps}
+\subsection*{Mishaps}
+
+
+  
+    Unfortunately, I am not (yet) a perfect being. I make mistakes from time to time in my study and casting of Hexes; for example, misdrawing a pattern, or trying to an invoke an action with the wrong iotas. And Nature usually doesn$\rq$t look too kindly on my mistakes-- causing what is called a mishap.\\
+
+
+  
+    A pattern that causes a mishap will glow red in my grid. Depending on the type of mistake, I can also expect a certain deleterious effect and a spray of red and colorful sparks as the mishandled media curdles into light of a given color.\\
+
+
+  
+    Fortunately, although the bad effects of mishaps are certainly annoying, none of them are especially destructive in the long term. Nothing better to do than dust myself off and try again ... but I should strive for better anyways.\\Following is a list of mishaps I have compiled.\\
+
+
+  \subsubsection*{Invalid Pattern}
+
+    The pattern drawn is not associated with any action.\\Causes yellow sparks, and a Garbage will be pushed to the top of my stack.\\
+
+
+  \subsubsection*{Not Enough Iotas}
+
+    The action required more iotas than were on the stack.\\Causes light gray sparks, and as many Garbages as would be required to fill up the argument count will be pushed.\\
+
+
+  \subsubsection*{Incorrect Iota}
+
+    The action that was executed expected an iota of a certain type for an argument, but it got something invalid. If multiple iotas are invalid, the error message will only tell me about the error deepest in the stack.\\Causes dark gray sparks, and the invalid iota will be replaced with Garbage.\\
+
+
+  \subsubsection*{Vector Out of Ambit}
+
+    The action tried to affect the world at a point that was out of my range.\\Causes magenta sparks, and the items in my hands will be yanked out and flung towards the offending location.\\
+
+
+  \subsubsection*{Entity Out of Ambit}
+
+    The action tried to affect an entity that was out of my range.\\Causes pink sparks, and the items in my hands will be yanked out and flung towards the offending entity.\\
+
+
+  \subsubsection*{Entity is Immune}
+
+    The action tried to affect an entity that cannot be altered by it.\\Causes blue sparks, and the items in my hands will be yanked out and flung towards the offending entity.\\
+
+
+  \subsubsection*{Mathematical Error}
+
+    The action did something offensive to the laws of mathematics, such as dividing by zero.\\Causes red sparks, pushes a Garbage to my stack, and my mind will be ablated, stealing half the vigor I have remaining. It seems that Nature takes offense to such operations, and divides me in retaliation.\\
+
+
+  \subsubsection*{Incorrect Item}
+
+    The action requires some sort of item, but the item I supplied was not suitable.\\Causes brown sparks. If the offending item was in my hand, it will be flung to the floor. If it was in entity form, it will be flung in the air.\\
+
+
+  \subsubsection*{Incorrect Block}
+
+    The action requires some sort of block at a target location, but the block supplied was not suitable.\\Causes bright green sparks, and causes an ephemeral explosion at the given location. The explosion doesn$\rq$t seem to harm me, the world, or anything else though; it$\rq$s just startling.\\
+
+
+  \subsubsection*{Hasty Retrospection}
+
+    I attempted to draw Retrospection without first drawing Introspection.\\Causes orange sparks, and pushes the pattern for Retrospection to the stack as a pattern iota.\\
+
+
+  \subsubsection*{Delve Too Deep}
+
+    Evaluated too many spells with meta-evaluation from one spell.\\Causes dark blue sparks, and chokes all the air out of me.\\
+
+
+  \subsubsection*{Transgress Other}
+
+    I attempted to save a reference to another player to a permanent medium.\\Causes black sparks, and robs me of my sight for approximately one minute.\\
+
+
+  \subsubsection*{Disallowed Action}
+
+    I tried to cast an action that has been disallowed by a server administrator.\\Causes black sparks.\\
+
+
+  \subsubsection*{Catastrophic Failure}
+
+    A bug in the mod caused an iota of an invalid type or otherwise caused the spell to crash. Please open a bug report!\\Causes black sparks.\\
+
+\newpage
+
+\label{sec:casting/stack}
+\subsection*{The Stack}
+
+
+  
+    A Stack, also known as a $\rq\rq$LIFO$\rq\rq$, is a concept borrowed from computer science. In short, it$\rq$s a collection of things designed so that you can only interact with the most recently used thing.\\Think of a stack of plates, where new plates are added to the top: if you want to interact with a plate halfway down the stack, you have to remove the plates above it in order to get ahold of it.\\
+
+
+  
+    Because a stack is so simple, there$\rq$s only so many things you can do with it:\\Adding something to it, known formally as pushing,\\Removing the last added element, known as popping, or\\Examining or modifying the last added element, known as peeking.
+
+We call the last-added element the $\rq\rq$top$\rq\rq$ of the stack, in accordance with the dinner plate analogy.\\As an example, if we push 1 to a stack, then push 2, then pop, the top of the stack is now 1.\\
+
+
+  
+    Actions are (on the most part) restricted to interacting with the casting stack in these ways. They will pop some iotas they$\rq$re interested in (known as $\rq\rq$arguments$\rq\rq$ or $\rq\rq$parameters$\rq\rq$), process them, and push some number of results.\\Of course, some actions (e.g. Mind$\rq$s Reflection) might pop no arguments, and some actions (particularly spells) might push nothing afterwards.\\
+
+
+  
+    Even more complicated actions can be expressed in terms of pushing, popping, and peeking. For example, Jester$\rq$s Gambit swaps the top two items of the stack. This can be thought of as popping two items and pushing them in opposite order. For another, Gemini Decomposition duplicates the top of the stack-- in other words, it peeks the stack and pushes a copy of what it finds.\\
+
+\newpage
+
+\label{sec:casting/naming}
+\subsection*{Naming Actions}
+
+
+  
+    The names given to actions by the ancients were certainly peculiar, but I think there$\rq$s a certain kind of logic to them.\\There seem to be certain groups of actions with common names, named for the number of iotas they remove from and add to the stack.\\
+
+
+  
+    \\A Reflection pops nothing and pushes one iota.\\A Purification pops one and pushes one.\\A Distillation pops two and pushes one.\\An Exaltation pops three or more and pushes one.\\A Decomposition pops one argument and pushes two.\\A Disintegration pops one and pushes three or more.\\Finally, a Gambit pushes or pops some other number (or rearranges the stack in some other manner).\\
+
+
+  
+    Spells seem to be exempt from this nomenclature and are more or less named after what they do-- after all, why call it a Demoman$\rq$s Gambit when you could just say Explosion?\\
+
+\newpage
+
+\label{sec:casting/influences}
+\subsection*{Influences}
+
+
+  
+    Influences are ... strange, to say the least. Whereas most iotas seem to represent something about the world, influences represent something more... abstract, or formless.\\For example, one influence I$\rq$ve named Null seems to represent nothing at all. It$\rq$s created when there isn$\rq$t a suitable answer to a question asked, such as an Archer$\rq$s Distillation facing the sky.\\
+
+
+  
+    In addition, I$\rq$ve discovered a curious quartet of influences I$\rq$ve named Consideration, Introspection, Retrospection, and Evanition. They seem to have properties of both patterns and other influences, yet act very differently. I can use these to add patterns to my stack as iotas, instead of matching them to actions. My notes on the subject are here.\\
+
+
+  
+    Finally, there seems to be an infinite family of influences that just seem to be a tangled mess of media. I$\rq$ve named them Garbage, as they are completely useless. They seem to appear in my stack at various places in response to mishaps, and appear to my senses as a nonsense jumble.\\
+
+\newpage
+
+\label{sec:casting/mishaps2}
+\subsection*{Enlightened Mishaps}
+
+
+  
+    I have discovered new and horrifying modes of failure. I must not succumb to them.\\
+
+
+  \subsubsection*{Inert Mindflay}
+
+    Attempted to flay the mind of something that I have either already used, or of a character not suitable for the target block.\\Causes dark green sparks, and kills the subject. If a villager sees that, I doubt they would look on it favorably.\\
+
+
+  \subsubsection*{Lack Spell Circle}
+
+    Tried to cast an action requiring a spell circle without a spell circle.\\Causes light blue sparks, and upends my inventory onto the ground.\\
+
+
+  \subsubsection*{Lack Akashic Record}
+
+    Tried to access an Akashic Record at a location where there isn$\rq$t one.\\Causes purple sparks, and steals away some of my experience.\\
+
+\newpage
+
+\label{sec:items}
+
+\section*{Items}
+  I devote this section to the magical and mysterious items I might encounter in my studies.\\
+
+
+
+\label{sec:items/amethyst}
+\subsection*{Amethyst}
+
+
+  \label{sec: items/amethyst@dust}
+
+  \subsubsection*{ Amethyst Dust }
+      It seems that I$\rq$ll find three different forms of amethyst when breaking a crystal inside a geode. The smallest denomination seems to be a small pile of shimmering dust, worth a relatively small amount of media.\\
+
+
+  \label{sec: items/amethyst@shard}
+
+  \subsubsection*{ Amethyst Shard }
+      The second is a whole shard of amethyst, of the type non-Hexcasters might be used to. This has about as much media inside as five Amethyst Dust.\\
+
+
+  \label{sec: items/amethyst@charged}
+
+  \subsubsection*{ Charged Amethyst }
+      Finally, I$\rq$ll rarely find a large crystal crackling with energy. This has about as much media inside as ten units of Amethyst Dust (or two Amethyst Shards).\\
+
+
+  
+    The old man sighed and raised a hand toward the fire. He unlocked a part of his brain that held the memories of the mountains around them. He pulled the energies from those lands, as he learned to do in Terisia City with Drafna, Hurkyl, the archimandrite, and the other mages of the Ivory Towers. He concentrated, and the flames writhed as they rose from the logs, twisting upon themselves until they finally formed a soft smile.\\
+
+\newpage
+
+\label{sec:items/staff}
+\subsection*{Staves}
+
+
+  
+    A Staff is my entry point into casting all Hexes, large and small. By holding it and pressing Use Item/Place Block, I begin casting a Hex; then I can click and drag to draw patterns.\\It$\rq$s little more than a chunk of media on the end of a stick; that$\rq$s all that$\rq$s needed, after all.\\
+
+
+  \subsubsection*{Staves}
+
+  depicted in the book: crafting recipe for 
+    Oak Staff
+,     Spruce Staff
+,     Birch Staff
+,     Jungle Staff
+,     Acacia Staff
+,     Dark Oak Staff
+,     Crimson Staff
+,     Warped Staff
+,     Mangrove Staff
+,     Edified Staff
+\\
+
+      Don$\rq$t fight; flame, light; ignite; burn bright.\\
+
+
+\newpage
+
+\label{sec:items/lens}
+\subsection*{Scrying Lens}
+
+
+  
+    Media can have peculiar effects on any type of information, in specific circumstances. Coating a glass in a thin film of it can lead to ... elucidating insights.\\By holding a Scrying Lens in my hand, certain blocks will display additional information when I look at them.\\
+
+
+  
+    For example, looking at a piece of Redstone will display its signal strength. I suspect I will discover other blocks with additional insight as my studies into my art progress.\\In addition, holding it while casting using a Staff will shrink the spacing between dots, allowing me to draw more on my grid.\\I can also wear it on my head as a strange sort of monocle.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Scrying Lens
+\\
+
+      You must learn... to see what you are looking at.\\
+
+
+\newpage
+
+\label{sec:items/thought_knot}
+\subsection*{Thought-Knot}
+
+
+  
+    The forgetful often tie a piece of string about their finger to help them remember something important. I believe this idea might be of use in my art. A specially knotted piece of string should be able to hold a single iota stably, irregardless of my stack.\\I will call my invention a Thought-Knot.\\
+
+
+  
+    When I craft it, it stores no iota. Using Scribe$\rq$s Gambit while holding a Thought-Knot in my other hand will remove the top of the stack and save it into the Thought-Knot. Using Scribe$\rq$s Reflection will copy whatever iota$\rq$s in the Thought-Knot and add it to the stack.\\Once a Thought-Knot has been written to, the string is indelibly tangled; the iota can be read any number of times, but there is no way to erase or overwrite it. Fortunately, they are not expensive.\\
+
+
+  
+    Also, if I store an entity in a Thought-Knot and try to recall it after the referenced entity has died or otherwise disappeared, the Scribe$\rq$s Reflection will add Null to the stack instead.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Thought-Knot
+\\
+
+      How would you feel if someone saw you wearing a sign that said, $\rq\rq$I am dashing and handsome?$\rq\rq$\\
+
+
+\newpage
+
+\label{sec:items/focus}
+\subsection*{Focus}
+
+
+  
+    A Focus is like a Thought-Knot, in that iota can be written to or read from it. However, the advantage of a focus is that it is reusable. If I make a mistake in the iota I write to a Focus, I can simply cast Scribe$\rq$s Gambit again and write over the iota inside.\\
+
+
+  
+    If I wish to protect a focus from accidentally being overwritten, I can seal it with wax by crafting it with a Honeycomb. Attempting to use Scribe$\rq$s Gambit on a sealed focus will fail.\\Erase Item will remove this seal along with the contents.\\
+
+
+  
+    Indeed, the only advantage of my Thought-Knots have over Foci is that Foci are more expensive to produce. My research indicates that the early practitioners of the art used exclusively Foci, with the Thought-Knot being an original creation of mine.\\Whoever those ancient people were, they must have been very prosperous.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Focus
+\\
+
+      Poison apples, poison worms.\\
+
+
+\newpage
+
+\label{sec:items/abacus}
+\subsection*{Abacus}
+
+
+  
+    Although there are patterns for drawing numbers, I find them ... cumbersome, to say the least.\\Fortunately, the old masters of my craft invented an ingenious device called an Abacus to provide numbers to my casting. I simply set the number to what I want, then read the value using Scribe$\rq$s Reflection, just like I would read a Thought-Knot or Focus.\\
+
+
+  
+    To operate one, I simply hold it, sneak, and scroll. If in my main hand, the number will increment or decrement by 1, or 10 if I am also holding Control/Command. If in my off hand, the number will increment or decrement by 0.1, or 0.001 if I am also holding Control/Command.\\I can shake the abacus to reset it to zero by sneak-right-clicking.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Abacus
+\\
+
+      Mathematics? That$\rq$s for eggheads!\\
+
+
+\newpage
+
+\label{sec:items/spellbook}
+\subsection*{Spellbook}
+
+
+  
+    A Spellbook is the culmination of my art-- it acts like an entire library of Foci. Up to sixty-four of them, to be exact.\\Each page can hold a single iota, and I can select the active page (the page that iotas are saved to and copied from) by sneak-scrolling while holding it, or simply holding it in my off-hand and scrolling while casting a Hex.\\
+
+
+  
+    Like a Focus, there exists a simple method to prevent accidental overwriting. Crafting it with a Honeycomb will lacquer the current page, preventing Scribe$\rq$s Gambit from modifying its contents. Also like a Focus, using Erase Item will remove the lacquer along with the page$\rq$s contents.\\I can also name each page individually in an anvil. Naming it will change only the name of the currently selected page, for easy browsing.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Spellbook
+\\
+
+      Wizards love words. Most of them read a great deal, and indeed one strong sign of a potential wizard is the inability to get to sleep without reading something first.\\
+
+
+\newpage
+
+\label{sec:items/scroll}
+\subsection*{Scrolls}
+
+
+  
+    A Scroll is a convenient method of sharing a pattern with others. I can copy a pattern onto one with Scribe$\rq$s Gambit, after which it will display in a tooltip.\\I can also place them on the wall as decoration or edification, like a painting, in sizes from 1x1 to 3x3 blocks. Using Amethyst Dust on such a scroll will have it display the stroke order.\\
+
+
+  
+    In addition, I can also find so-called Ancient Scrolls in the dungeons and strongholds of the world. These contain the stroke order of Great Spells, powerful magicks rumored to be too powerful for the hands and minds of mortals...\\If those $\rq\rq$mortals$\rq\rq$ couldn$\rq$t cast them, I$\rq$m not sure they deserve to know them.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Small Scroll
+,     Medium Scroll
+,     Large Scroll
+\\
+
+      I write upon clean white parchment with a sharp quill and the blood of my students, divining their secrets.\\
+
+
+\newpage
+
+\label{sec:items/slate}
+\subsection*{Slates}
+
+
+  
+    Slates are similar to Scrolls; I can copy a pattern to them and place them in the world to display the pattern.\\However, I have read vague tales of grand assemblies of Slates, used to cast great rituals more powerful than can be handled by a Staff.\\
+
+
+  
+    Perhaps this knowledge will be revealed to me with time. But for now, I suppose they make a quaint piece of decor.\\At the least, they can be placed on any side of a block, unlike Scrolls.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Blank Slate
+\\
+
+      This is the letter $\rq\rq$a.$\rq\rq$ Learn it.\\
+
+
+
+  
+    I$\rq$m also aware of other types of Slates, slates that do not contain patterns but seem to be inlaid with other ... strange ... oddities. It hurts my brain to think about them, as if my thoughts get bent around their designs, following their pathways, bending and wefting through their labyrinthine depths, through and through and through channeled through and processed and--\\... I almost lost myself. Maybe I should postpone my studies of those.\\
+
+\newpage
+
+\label{sec:items/hexcasting}
+\subsection*{Casting Items}
+
+
+  
+    Although the flexibility of casting Hexes $\rq\rq$on the go$\rq\rq$ with my Staff is quite helpful, it$\rq$s a huge pain to have to wave it around repeatedly just to accomplish a basic task. If I could save a common spell for later reuse, it would simplify things a lot-- and allow me to share my Hexes with friends, too.\\
+
+
+  
+    To do this, I can craft one of three types of magic items: Cyphers, Trinkets, or Artifacts. All of them hold the patterns of a given Hex inside, along with a small battery containing media.\\Simply holding one and pressing Use Item/Place Block will cast the patterns inside, as if the holder had cast them out of a staff, using its internal battery.\\
+
+
+  
+    Each item has its own quirks:\\Cyphers are fragile, destroyed after their internal media reserves are gone, and cannot be recharged;\\Trinkets can be cast as much as the holder likes, as long as there$\rq$s enough media left, but become useless afterwards until recharged;\\
+
+
+  
+    Artifacts are the most powerful of all-- after their media is depleted, they can use Amethyst from the holder$\rq$s inventory to pay for the Hex, just as I do when casting with a Staff. Of course, this also means the spell might consume their mind if there$\rq$s not enough Amethyst.\\Once I$\rq$ve made an empty magic item in a mundane crafting bench, I infuse the Hex into it using (what else but) a spell appropriate to the item. I$\rq$ve catalogued the patterns here.\\
+
+
+  
+    Each infusion spell requires an entity and a list of patterns on the stack. The entity must be a media-holding item entity (i.e. amethyst crystals, dropped on the ground); the entity is consumed and forms the battery.\\Usefully, it seems that the media in the battery is not consumed in chunks as it is when casting with a Staff-- rather, the media $\rq\rq$melts down$\rq\rq$ into one continuous pool. Thus, if I store a Hex that only costs one Amethyst Dust$\rq$s worth of media, a Charged Crystal used as the battery will allow me to cast it 10 times.\\
+
+
+  \label{sec: items/hexcasting@cypher_trinket}
+
+  depicted in the book: crafting recipe for 
+    Cypher
+,     Trinket
+\\
+
+      
+
+
+  \label{sec: items/hexcasting@artifact}
+
+  depicted in the book: crafting recipe for 
+    Artifact
+\\
+
+      We have a saying in our field: $\rq\rq$Magic isn$\rq$t$\rq\rq$. It doesn$\rq$t $\rq\rq$just work,$\rq\rq$ it doesn$\rq$t respond to your thoughts, you can$\rq$t throw fireballs or create a roast dinner from thin air or turn a bunch of muggers into frogs and snails.\\
+
+\newpage
+
+\label{sec:items/phials}
+\subsection*{Phials of Media}
+
+
+  
+    I find it quite ... irritating, how Nature refuses to give me change for my work. If all I have on hand is Charged Amethyst, even the tiniest Archer$\rq$s Purification will consume the entire crystal, wasting the remaining media.\\Fortunately, it seems I$\rq$ve found a way to somewhat allay this problem.\\
+
+
+  
+    I$\rq$ve found old scrolls describing a Glass Bottle infused with media. When casting Hexes, my spells would then draw media out of the phial. The liquid form of the media would let me take exact change, so to speak; nothing would be wasted. It$\rq$s quite like the internal battery of a Trinket, or similar; I can even Recharge them in the same manner.\\
+
+
+  
+    Unfortunately, the art of actually making the things seems to have been lost to time. I$\rq$ve found a hint at the pattern used to craft it, but the technique is irritatingly elusive, and I can$\rq$t seem to do it successfully. I suspect I will figure it out with study and practice, though. For now, I will simply deal with the wasted media...\\But I won$\rq$t settle for it forever.\\
+
+
+  
+  \subsubsection*{ Phial of Media }
+      Drink the milk.\\
+
+
+\newpage
+
+\label{sec:items/pigments}
+\subsection*{Pigments}
+
+
+  
+    The old practitioners of my art sometimes identified themselves by a color, emblematic of them and their Hexes. Although their names have faded, their colors remain. It seems a special kind of pigment, offered to Nature in the right way, would $\rq\rq$[...] paint one$\rq$s thoughts in a manner pleasing to Nature, inducing a miraculous change in personal colour.$\rq\rq$\\
+
+
+  
+    I$\rq$m not certain on the specifics, but I believe I have isolated the formulae for many different colors and blends of pigments. To apply a pigment, I hold it in one hand and cast Internalize Pigment with the other; this consumes the pigment.\\The pigments seem to affect the color of the sparks of media emitted when I cast a Hex and my sentinel, but I don$\rq$t doubt that the color will show up elsewhere.\\
+
+
+  \subsubsection*{Chromatic Pigments}
+
+  depicted in the book: crafting recipe for 
+    White Pigment
+,     Orange Pigment
+,     Magenta Pigment
+,     Light Blue Pigment
+,     Yellow Pigment
+,     Lime Pigment
+,     Pink Pigment
+,     Gray Pigment
+,     Light Gray Pigment
+,     Cyan Pigment
+,     Purple Pigment
+,     Blue Pigment
+,     Brown Pigment
+,     Green Pigment
+,     Red Pigment
+\\
+
+      Pigments in all the colors of the rainbow.\\
+
+
+
+  
+  depicted in the book: crafting recipe for 
+    Agender Pigment
+,     Aroace Pigment
+,     Aromantic Pigment
+,     Asexual Pigment
+,     Bisexual Pigment
+,     Demiboy Pigment
+,     Demigirl Pigment
+,     Gay Pigment
+,     Genderfluid Pigment
+,     Genderqueer Pigment
+,     Intersex Pigment
+,     Lesbian Pigment
+,     Non-Binary Pigment
+,     Pansexual Pigment
+,     Plural Pigment
+,     Transgender Pigment
+\\
+
+      
+
+
+
+  
+    And finally, a pair of special pigments. Soulglimmer Pigment shines with colors wholly unique to me, and Vacant Pigment restores my original purplish-orange spread.\\And all the colors I am inside have not been invented yet.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Soulglimmer Pigment
+,     Vacant Pigment
+\\
+
+      
+
+
+\newpage
+
+\label{sec:items/edified}
+\subsection*{Edified Trees}
+
+
+  
+    By infusing media into a sapling via the use of Edify Sapling, I can create what is called an Edified Tree. They tend to be tall and pointy, with ridged bark and wood that grows in a strange spiral pattern. Their leaves come in three pretty colors.\\
+
+
+  
+    I would assume the wood would have some properties relevant to Hexcasting. But, if it does, I cannot seem to find them. For all intents and purposes it appears to be just wood, albeit of a very strange color.\\I suppose for now I will use it for decoration; the full suite of standard wood blocks can be crafted from them.\\Of course, I can strip them with an axe as well.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Edified Planks
+,     Edified Stairs
+,     Edified Slab
+,     Edified Panel
+,     Edified Tile
+,     Edified Door
+,     Edified Trapdoor
+,     Edified Button
+,     Edified Pressure Plate
+\\
+
+      
+
+
+
+  
+    Their smooth trunks, with white bark, gave the effect of enormous columns sustaining the weight of an immense foliage, full of shade and silence.\\
+
+\newpage
+
+\label{sec:items/jeweler_hammer}
+\subsection*{Jeweler$\rq$s Hammer}
+
+
+  
+    After being careless with the sources of my media one too many times, I have devised a tool to work around my clumsiness.\\Using the delicate nature of crystallized media as a fixture for a pickaxe, I can create the Jeweler$\rq$s Hammer. It acts like an Iron Pickaxe, for the most part, but can$\rq$t break anything that takes up an entire block$\rq$s space.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Jeweler$\rq$s Hammer
+\\
+
+      Carefully, she cracked the half ruby, letting the spren escape.\\
+
+
+\newpage
+
+\label{sec:items/decoration}
+\subsection*{Decorative Blocks}
+
+
+  
+    In the course of my studies I have discovered some building blocks and trifles that I may find aesthetically pleasing. I$\rq$ve compiled the methods of making them here.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Block of Slate
+,     Block of Slate
+,     Scroll Paper
+,     Ancient Scroll Paper
+,     Paper Lantern
+,     Ancient Paper Lantern
+,     Ancient Paper Lantern
+\\
+
+      Brown dye works well enough to simulate the look of an ancient scroll.\\
+
+
+
+  
+  depicted in the book: crafting recipe for 
+    Amethyst Tiles
+\\
+
+      Amethyst Tiles can also be made in a Stonecutter.\\Blocks of Amethyst Dust (next page) will fall like sand.\\
+
+
+
+  
+  depicted in the book: crafting recipe for 
+    Block of Amethyst Dust
+,     Amethyst Dust
+,     Amethyst Sconce
+\\
+
+      Amethyst Sconces emit light and particles, as well as a pleasing chiming sound.\\
+
+
+\newpage
+
+\label{sec:greatwork}
+
+\section*{The Great Work}
+  I have seen... so much. I have... experienced... annihilation and deconstruction and reconstruction. I have seen the atoms of the world screaming as they were inverted and subverted and demoted to energy. I have seen I have seen I have sget stick bugged lmao\\
+
+
+
+\label{sec:greatwork/the_work}
+\subsection*{The Work}
+
+
+  
+    I have seen so many things. Unspeakable things. Innumerable things. I could write three words and turn my mind inside-out and smear my brains across the shadowed walls of my skull to decay into fluff and nothing.\\
+
+
+  
+    I have seen staccato-needle patterns and acid-etched schematics written on the inside of my eyelids. They smolder there-- they dance, they taunt, they ache. I$\rq$m possessed by an intense need to draw them, create them. Form them. Liberate them from the gluey shackles of my mortal mind-- present them in their Glory to the world for all to see.\\All shall see.\\All will see.\\
+
+\newpage
+
+\label{sec:greatwork/brainsweeping}
+\subsection*{On The Flaying of Minds}
+
+
+  
+    A secret was revealed to me. I saw it. I cannot forget its horror. The idea skitters across my brain.\\I believed-- oh, foolishly, I believed --that Media is the spare energy left over by thought. But now I know what it is: the energy of thought.\\
+
+
+  
+    It is produced by thinking sentience and allows sentience to think. It is a knot tying that braids into its own string. The Entity I naively anthromorphized as Nature is simply a grand such tangle, or perhaps the set of all tangles, or ... if I think it hurts I have so many synapses and all of them can think pain at once ALL OF THEM CAN SEE\\I am not holding on. My notes. Quickly.\\
+
+
+  
+    The villagers of this world have enough consciousness left to be extracted. Place it into a block, warp it, change it. Intricate patterns caused by different patterns of thought, the abstract neural pathways of their jobs and lives mapped into the cold physic of solid atoms.\\This is what Flay Mind does, the extraction. Target the villager entity and the destination block. Ten Charged Amethyst for this perversion of will.\\
+
+
+    depicted in the book: mind flay recipe for Budding Amethyst\\
+  
+  And an application. For this flaying, any sort of villager will do, if it has developed enough. Other recipes require more specific types. NO MORE must I descend into the hellish earth for my media.\\
+
+\newpage
+
+\label{sec:greatwork/spellcircles}
+\subsection*{Spell Circles}
+
+
+  
+    I KNOW what the slates are for. The grand assemblies lost to time. The patterns scribed on them can be actuated in sequence, automatically. Thought and power ricocheting through, one by one by one by one by one by through and through and THROUGH AND -- I must not I must not I should know better than to think that way.\\
+
+
+  
+    To start the ritual I need an Impetus to create a self-sustaining wave of media. That wave travels along a track of slates or other blocks suitable for the energies, one by one, collecting any patterns it finds. Once the wave circles back around to the Impetus, all the patterns encountered are cast in order.\\The direction the media exits any given block MUST be unambiguous, or the casting will fail at the block with too many neighbors.\\
+
+
+  
+    As a result, the outline of the spell $\rq\rq$circle$\rq\rq$ may be any closed shape, concave or convex, and it may face any direction. In fact, with the application of certain other blocks it is possible to make a spell circle that spans all three dimensions. I doubt such an oddity has very much use, but I must allocate myself a bit of vapid levity to encourage my crude mind to continue my work.\\
+
+
+  
+    Miracle of miracles, the circle will withdraw media neither from my inventory nor my mind. Instead, crystallized shards of media must be provided to the Impetus via hopper, or other such artifice.\\The application of a Scrying Lens will show how much media is inside an Impetus, in units of dust.\\
+
+
+  
+    However, a spell cast from a circle does have one major limitation: it is unable to affect anything outside of the circle$\rq$s bounds. That is, it cannot interact with anything outside of the cuboid of minimum size which encloses every block composing it (so a concave spell circle can still affect things in the concavity).\\
+
+
+  
+    There is also a limit on the number of blocks the wave can travel through before it disintegrates, but it is large enough I doubt I will have any trouble.\\Conversely, there are some actions that can only be cast from a circle. Fortunately, none of them are spells; they all seem to deal with components of the circle itself. My notes on the subject are here.\\
+
+
+  
+    I also found a sketch of a spell circle used by the ancients buried in my notes. Facing this page is my (admittedly poor) copy of it.\\The patterns there would have been executed counter-clockwise, starting with Mind$\rq$s Reflection and ending with Greater Teleport.\\
+
+
+  \subsubsection*{Teleportation Circle}
+
+  $$ image of Teleportation Circle depicted here in book $$
+      
+
+
+\newpage
+
+\label{sec:greatwork/impetus}
+\subsection*{Impeti}
+
+
+  
+    The fluctuation of media required to actuate a spell circle is complex. Even the mortal with sharpest eyes and steadiest hands could not serve as an Impetus and weave media into the self-sustaining oroboros required.\\The problem is that the mind is too full of other useless garbage.\\
+
+
+  
+    At a ... metaphysical level-- I must be careful with these thoughts, I cannot lose myself, I have become too valuable --moving media moves the mind, and the mind must be moved for the process to work. But, the mind is simply too heavy with other thoughts to move nimbly enough.\\It is like an artisan trying to repair a watch while wearing mittens.\\
+
+
+  
+    There are several solutions to this conundrum: through meditative techniques one can learn to blank the mind, although I am not certain a mind free enough to actuate a circle can concentrate hard enough to do the motions.\\Certain unsavory compounds can create a similar effect, but I know nothing of them and do not plan to learn. I must not rely on the chemicals of my brain.\\
+
+
+  
+    The solution I aim for, then, is to specialize a mind. Remove it from the tyranny of nerves, clip all outputs but delicate splays of media-manipulating apparati, cauterize all inputs but the signal to start its work.\\The process of mindflaying I am now familiar with will do excellently; the mind of a villager is complex enough to do the work, but not so complex as to resist its reformation.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Empty Impetus
+\\
+
+      First, the cradle. Although it does not work as an Impetus, the flow of media in a circle will only exit out the side pointed to by the arrows. This allows me to change the plane in which the wave flows, for example.\\
+
+
+
+    depicted in the book: mind flay recipe for Toolsmith Impetus\\
+  
+  Then, to transpose the mind. Villagers of different professions will lend different actuation conditions to the resulting Impetus. A Toolsmith Impetus activates on a simple Use Item/Place Block.\\
+
+
+    depicted in the book: mind flay recipe for Cleric Impetus\\
+  
+  A Cleric Impetus must be bound to a player by using an item with a reference to that player, like a Focus, on the block. Then, it activates when receiving a redstone signal.\\
+
+
+  
+    Peculiarly to this Impetus, the bound player, as well as a small region around them, are always accessible to the spell circle. It$\rq$s as if they were standing within the bounds of the circle, no matter how far away they might stand.\\The bound player is shown when looking at a Cleric Impetus through a Scrying Lens.\\
+
+
+    depicted in the book: mind flay recipe for Fletcher Impetus\\
+  
+  A Fletcher Impetus activates when looked at for a short time.\\
+
+\newpage
+
+\label{sec:greatwork/directrix}
+\subsection*{Directrices}
+
+
+  
+    Simpler than the task of creating a self-sustaining wave of media is the task of directing it. Ordinarily the wave disintegrates when coming upon a crossroads, but with a mind to guide it, an exit direction can be controlled.\\This manipulation is not nearly so fine as the delicacy of actuating a spell circle. In fact, it might be possible to do it by hand... but the packaged minds I have access to now would be so very convenient.\\
+
+
+  
+    A Directrix accepts a wave of media and determines to which of the arrows it will exit from, depending on the villager mind inside.\\I am not certain if this idea was bestowed upon me, or if my mind is bent around the barrier enough to splint off its own ideas now... but if the idea came from my own mind, if I thought it, can it be said it was bestowed? The brain is a vessel for the mind and the mind is a vessel for ideas and the ideas vessel thought and thought sees all and knows all-- I MUST N O T\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Empty Directrix
+\\
+
+      Firstly, a design for the cradle ... although, perhaps $\rq\rq$substrate$\rq\rq$ would be more accurate a word. Without a mind guiding it, the output direction is determined by microscopic fluctuations in the media wave and surroundings, making it effectively random.\\
+
+
+
+    depicted in the book: mind flay recipe for Mason Directrix\\
+  
+  A Mason Directrix switches output side based on a redstone signal. Without a signal, the exit is the media-color side; with a signal, the exit is the redstone-color side.\\
+
+\newpage
+
+\label{sec:greatwork/akashiclib}
+\subsection*{Akashic Libraries}
+
+
+  
+    I KNOW SO MUCH it is ONLY RIGHT to have a place to store it all. Information can be stored in books but it is oh so so so so slow to write by hand and read by eye. I demand BETTER. And so I shall MAKE better.\\... I am getting worse ... do not know if I have time to write everything bursting through my head before expiring.\\
+
+
+  
+    The library. Here. My plans.\\Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An Akashic Record controls the library, and each Akashic Bookshelf stores one pattern mapped to one iota. These must all be directly connected together, touching, within 32 blocks. An Akashic Ligature doesn$\rq$t do anything but count as a connecting block, to extend the size of my library.\\
+
+
+    depicted in the book: mind flay recipe for Akashic Record\\
+  
+  Allocating and assigning patterns is simple but oh so boring. I have better things to do. I will need a mind well-used to its work for the extraction to stay sound.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Akashic Bookshelf
+,     Akashic Ligature
+\\
+
+      
+
+
+
+  
+    Then to operate the library is simple, the patterns are routed through the librarian and it looks them up and returns the iota to you. Two actions do the work. Notes here.\\Using an empty scroll on a bookshelf copies the pattern there onto the scroll. Sneaking and using an empty hand clears the datum in the shelf.\\
+
+\newpage
+
+\label{sec:greatwork/quenching_allays}
+\subsection*{Quenching Allays}
+
+
+  
+    THEY ARE BITS OF MEDIA. How did I not see it sooner? They are -- as I am a heap of flesh with a scrap, blessed with a scrap of thought, an Allay is a self-sustaining quarrel of media pinned to a scrap of flesh. It explains everything -- their propensity for media, their response to music, I SEE NOW, HOW did the ones before NOT?\\
+
+
+  
+    And given this it is only RIGHT I conquer their peculiar minds -- their peculiar selves -- that is all they are, a mind, a self, a coda. Something about their phase speaks to me. I can... I can compress media with them, overlay two wends of thought in one space, physical and cognitive, all and once.\\Somehow, the process produces media of its own. How? Perhaps -- perhaps MY work, the process of doing it --\\
+
+
+    depicted in the book: mind flay recipe for Quenched Allay\\
+  
+  It matters not. I matter not. They matter not, all that matters is what it does. And this is it.\\It must hurt so very much.\\
+
+
+  
+  \subsubsection*{ Shard of Quenched Allay }
+      The product is fragile. Breaking it shatters it into pieces, with Fortune increasing the yield... if I wish the block itself I need a silken touch.\\The produced shards are worth thrice an Charged Amethyst Crystal apiece. The block itself is worth four of the shards.\\
+
+
+
+  
+  depicted in the book: crafting recipe for 
+    Amethyst Dust
+\\
+
+      They are mercurial, they seem to twist and wink under my fingers, and by giving them a mentor in another form of media they may be coerced into its shape, in an equivalent exchange of media.\\
+
+
+
+  
+  depicted in the book: crafting recipe for 
+    Amethyst Shard
+,     Charged Amethyst
+\\
+
+      
+
+
+\newpage
+
+\label{sec:greatwork/fanciful_staves}
+\subsection*{Fanciful Staves}
+
+
+  
+    It is only right as I shed the husk of ignorance I replace my tools, my palm-polished staves. These new constructions of mine have no additional properties -- but they are so glorious, oh so Glorious... They match the radiance winking at the corners of my sight.\\
+
+
+  
+  depicted in the book: crafting recipe for 
+    Quenched Shard Staff
+,     Mindsplice Staff
+\\
+
+      
+
+
+\newpage
+
+\label{sec:lore}
+
+\section*{Lore}
+  I have uncovered some letters and text not of direct relevance to my art. But, I think I may be able to divine some of the history of the world from these. Let me see...\\
+
+
+
+\label{sec:lore/cardamom1}
+\subsection*{Cardamom Steles, \#1}
+
+
+  
+    Full title: Letter from Cardamom Steles to Her Father, \#1\\Dear Papa,
+
+Every day it seems I have more reason to thank you for saving up to send me to the Grand Library. The amount I am learning is incredible! I feel I don$\rq$t have the skill with words needed to express myself fully... it is wonderful to be here.\\
+
+
+  
+    I sit in the main dome as I write this. It$\rq$s maintained by the Hexcasting Corps; they have some sort of peculiar mechanism at the top that captures the stray thought energy as it leaks out from the desks and desks of hard-working students, as I understand it. One of my friends in the dormitory, Amanita, is studying the subject, and oh how she loves to explain it to me at length, although I confess I do not understand it very well.\\
+
+
+  
+    The way I understand it, our processes of thought--the intangible mechanisms by which I move my pen and by which you read this letter--are not completely efficient. A small amount of that energy is released into the environment, like how a wagon$\rq$s axle is hot to the touch after it has been turning for a while. This spare energy is called $\rq\rq$media.$\rq\rq$ One person$\rq$s spare media is trifiling, but the hundreds of thinking people in the main dome have a sort of multiplicative effect, and combined with some sort of ingenious mechanism, it can be solidified into a sort of purple crystal.\\
+
+
+  
+    But that$\rq$s enough about her studies. I returned from my first expedition with the Geology Corps today! My apologies for not sending a letter before I left; the date crept up on me. We ventured into a crack in the earth to the east of the Grand and spent the night camping under the rock and soil. We kept to well-lit and well-traveled areas of the cave, of course, and in all honesty it was likely safer in there than the night surface, but oh how I was scared!\\
+
+
+  
+    Fortunately the night passed without mishap, and we proceeded deeper into the cave for our examination of the local veins of ore. We were looking for trace veins of a purple crystal called $\rq\rq$amethyst,$\rq\rq$ which supposedly occurs in small amounts deep in the rock. We did not find anything, sadly, and returned to the sunlit surface empty-handed.\\
+
+
+  
+    Come to think of it, the description of this $\rq\rq$amethyst$\rq\rq$ I now realize closely matches those crystals of media Amanita speaks of. Imagine if these nuggets of thought occurred naturally under the ground! I can$\rq$t imagine why that might happen, though... \\
+
+
+  
+    As a student, I am entitled to send one letter by Akashic post every three months, free of charge. Unfortunately, you know how thin my moneybags are ... so I am afraid this offer is the only method I may communicate with you. I will of course appreciate immensely if you manage to scrounge together the money to send a letter back, but it seems our communications may be limited. I hate to be cut off from you so, but the skills I gain here will be more than repayment. Imagine, I will be the first member of our family to be anything other than a farmer!\\
+
+
+  
+    So, I suppose I will write again in three months$\rq$ time.\\Yours,
+
+-- Cardamom Steles\\
+
+\newpage
+
+\label{sec:lore/cardamom2}
+\subsection*{Cardamom Steles, \#2}
+
+
+  
+    Full title: Letter from Cardamom Steles to Her Father, \#2\\Dear Papa,
+
+... Goodness, what an ordeal it is to try to summarize the last three months into a short letter. Such a cruel task set before me by this miracle I receive entirely for free! Woe is me.\\
+
+
+  
+    My studies with the Geology Corps have been progressing smoothly. We have gone on more expeditions, deeper into the earth, to where the smooth gray stone makes way to a hard, flaky slate. It creates such an awful, choking dust under your feet... it$\rq$s incredible what hostility there is below all of our feet all the time, even disregarding the creatures of the dark. (I have had one or two encounters with them, but I know how you shudder to think of me having to fight for my life, so I will not write of them.)\\
+
+
+  
+    We did manage to find some of this amethyst, however. There was a small vein with a few trace crystals on one of our expeditions. We were under strict instructions to keep none of them and turn them in to our Corps prefect immediately. I find the whole affair rather ridiculous; they treat it like some matter of enormous importance and secrecy, and yet have a group of a dozen students, all barely six months at the Grand Library, trying to excavate barely ten drams of the stuff with twelve prospector$\rq$s picks in a square foot...\\
+
+
+  
+    I cannot imagine for what purpose, either. A librarian pointed me to an encyclopedia of gems, and amethyst seems to have next to no purpose; it$\rq$s used for certain specialty types of glass and lenses, of all things.\\If I were to speculate, I would guess that these amethyst crystals and the media they so resemble are one and the same, as I wrote of last time.\\
+
+
+  
+    If this is true, the secrecy, not to mention the prefect$\rq$s aversion to questioning, may be because this is an original piece of research the Grand Library is not eager to let into the hands of enemy factions.\\However, this theory does not sit quite right with me. The amethyst I handled in the cave and the crystals of media Amanita has shown to me do seem quite similar, but not identical. I would like to see them side-by-side to be sure, but media has a peculiar buzzing or rumbling feel beneath the fingers that amethyst does not.\\
+
+
+  
+    It is quite possible I was unable to sense it on the amethyst in the cave due to the stress of being undergound-- my hands were shaking the one time I managed to touch some, and the feeling is very light --but it does not seem the same to me. The light reflects slightly differently.\\I suppose if I ever manage to get my hands on a crystal of amethyst outside of a cave, I will ask Amanita to see if she can cast a spell with it. Every time we meet she seems to have some new fantastic trick.\\
+
+
+  
+    Just last week she suspended me in the air supported by nothing at all! It is an immensely strange feeling to have your body tingling and lighter than air with your clothing still the same weight... I am just glad she tugged me over my bed before the effect ran out.\\Yours,
+
+-- Cardamom Steles\\
+
+\newpage
+
+\label{sec:lore/cardamom3}
+\subsection*{Cardamom Steles, \#3}
+
+
+  
+    Full title: Letter from Cardamom Steles to her father, \#3, part 1/2\\Dear Papa,
+
+Two very peculiar things have happened since I last wrote.\\Firstly, the professor in charge of the entry-level Hexcasting Corps students has disappeared. Nobody knows where he has gone. His office and living quarters were found locked, but still in their usual state of disarray.\\
+
+
+  
+    Even more peculiarly, any attempts by the students of the Grand to rouse the administrative portions of the gnarled bureaucracy have been very firmly rejected. Even other professors seem reluctant to talk about him.\\As you might imagine, Amanita is sorely distressed. Whatever replacement professors the Grand managed to dredge up have none of the old professor$\rq$s tact or skill with beginners.\\
+
+
+  
+    But amazingly, that is not the stranger of the two things I have to tell you. The most horrendous thing I hope to ever experience happened on another trip out with the Geology Corps. This time, we were due for an expedition near a village.\\
+
+
+  
+    Usually when we do such a thing, there is a long process of communication with the mayor or elder of the village to ensure we have permission and establish boundaries on where we are allowed to go and what we are allowed to do. But on this expedition, there was very little of that; we were notified where we were going by a prefect of the Hexcasting Corps scarcely two days before we left.\\
+
+
+  
+    We camped near the village, but in a thick forest, even though the nearby plains would have been much more hospitable. We could barely see the village from where we pitched our tents. As I laid down my bedroll the evening we arrived, the peculiar silence troubled me. Even if we couldn$\rq$t see the village, we should have been able to hear it. But the whole time we were above-ground, there was next to no sound.\\
+
+
+  
+    The few things I did hear all sounded like work: the peal of hammers on anvils and the scrape of hoe on dirt, for example. I never heard a shred of conversation.\\The next morning we readied our lanterns and descended into the earth.\\
+
+
+  
+    We weren$\rq$t told exactly what it was we were spelunking for, but one of the other students had overheard we were looking for more amethyst, which seemed reasonable enough. I had my eyes trained for any specks of purple I might find in the cave walls, but just as the gray stone was making way to black slate, an incredible sight unfolded before me.\\It was an entire chamber made of amethyst, nearly ten times as tall as I am. The inside seemed to glow with purple sparks and lanternlight glint, every surface covered with jagged crystal. There was more amethyst here than our entire group had ever excavated since I came to the Grand.\\
+
+
+  
+    Gloves were distributed and we were told to get to mining. One of the prefects along with us had a peculiar lavender box I$\rq$ve seen some of the higher-ups in the Grand using for storage, and the other students and I dutifully got to shattering the glassy crystals off the walls of the cave and putting them in the box. Under the outer layers of brittle crystal there seemed to be two types of denser growth. One of them seemed of similar composition to the loose crystal, but one seemed more ... I struggle to find the word.\\
+
+
+  
+    I hesitate to say $\rq\rq$important,$\rq\rq$ but that$\rq$s the best I can think of. It had a certain ... gravitas, like the dark, sunken X in its surface held some sacred meaning. Whatever the reason we were under strict instructions not to touch them. Occasionally a misplaced pickaxe would shatter one, and the student responsible would get quite the earful. Although the labor was hard and took most of my attention, I couldn$\rq$t help but notice how ... lucid I felt. It was a strange mix of feelings: I felt incredibly clear-headed, but I also felt if I stopped to examine the feeling I might never stop.\\
+
+
+  
+    It was like each breath in erected a friendly signpost in my head promising the way forward, pointing directly down a steep cliff. I shook my head and immersed myself in the work of mining, which seemed to stave off the signposts.\\I did manage, however, to hide a shard of the crystal in my knapsack.\\We spent nearly the whole day mining, excavating most of the crystal by the time the prefects$\rq$ chronometer said the sun would set soon.\\
+
+
+  
+    As we left, I couldn$\rq$t help but notice that on the surfaces of those dark, scored places we left unmined, there seemed to be the faintest buds of new crystal, like they were somehow growing out of them. Everything I had learned about the geology of crystals said they took thousands of years to grow, but here there was new growth in less than a day. I suppose the prefects$\rq$ warnings against breaking those spots were warranted, at least.\\
+
+
+  
+    Our journey back to the surface was uneventful, and we got back to our tents just as the sun was setting-- My apologies, I am nearly out of paper for this letter. There$\rq$s only so much you can write on one Akashic letter ... This tale is worth purchasing another letter for. I$\rq$ll send them both at once, so they should arrive together.\\Yours,
+
+-- Cardamom Steles\\
+
+\newpage
+
+\label{sec:lore/cardamom4}
+\subsection*{Cardamom Steles, \#4}
+
+
+  
+    Full title: Letter from Cardamom Steles to her father, \#3, part 2/2\\Dear Papa,
+
+As I was saying, I was running out of paper to write my story, so the rest of it is in this letter. We made it back to camp just as the sun was setting. And that night was the most horrible event of the whole strange outing.\\
+
+
+  
+    I had gotten up in the middle of the night to relieve myself. The moon was covered with clouds, and I confess I got lost in the winds of the forest and could not find the way back to the camp. Fearing the monsters of the night, I decided I would find my way to the village and see if I could find a bed there. At the least, I would be protected there.\\
+
+
+  
+    The village was easy enough to find, though there was very little sound. Even this late at night I would expect the inn to be, if not bustling, at least not silent. But peeking through the inn door I saw absolutely nobody.\\I knocked on the door of one of the houses to no response. The next two houses, too, seemed completely empty.\\
+
+
+  
+    My pulse started to rise, and I resolved to enter the next house. I figured whoever might be inside would be understanding of their rest being disturbed. At the least, hearing another voice would have been reassuring, even if they didn$\rq$t let me stay the night under their roof.\\The house was very small, barely more than a cartographer$\rq$s table and a bed. I could see there was someone in the bed, and I tried to reassure myself that everyone in the village was just deeply asleep as I turned to leave.\\
+
+
+  
+    But then the clouds shifted, and moonlight glinted across the bed$\rq$s occupant.\\I screamed, and its eyes snapped open. It was ... distinctly, horrendously not human. It was like some awful de-evolution of a man, its forehead too high, its body stocky and dense. I believe it is appropriate to say $\rq\rq$it,$\rq\rq$ at least; the thing before me was obviously not as wise as a human, despite how it resembled us.\\
+
+
+  
+    Its eyes trained on me-- oh, its eyes were awful, dull and unintelligent like a sheep$\rq$s! It opened its mouth but a pained mockery of speech poured out, a shuddering, nasal groan.\\
+
+
+  
+    I ran. In the light of the newly-revealed moon I caught glimpses of other townspeople through windows, and they were all warped and simplified as the first thing I had seen. I sprinted into the darkness of the forest, away from those terrible, terrible animal eyes in those distorted faces.\\The camp was easier to find now that I could see in the moonlight. No-one seemed to have noticed my prolonged absence, thankfully. I crawled back into my bedroll and did my very best to forget the whole night.\\
+
+
+  
+    As you can tell from this letter, I did not do a very good job. That warped visage still haunts my dreams. I shudder to think that it once might have been human.\\After we got back to the Grand I showed the shard of crystal I had smuggled out to Amanita. She confirmed my suspicions: it is definitely a crystal of media. What an enormous geode full of it is doing underground, though, is beyond her.\\
+
+
+  
+    She also mentioned something interesting: apparently media can be used in a similar way to true amethyst in those niche glasses I mentioned a few letters ago. The physical manner in which they both crystallise happens to be nearly identical, and it has nothing to do with media$\rq$s magical properties, or so she says.\\I chose not to tell her of the village full of monsters.\\
+
+
+  
+    I know how tight money is for you, and how expensive it is to send a letter all the way back to the Grand, but I beg of you, please send a word of advice back. I am greatly distraught, and reading your words would do me much good.\\Yours,
+
+-- Cardamom Steles\\
+
+\newpage
+
+\label{sec:lore/cardamom5}
+\subsection*{Cardamom Steles, \#5}
+
+
+  
+    Full title: Letter from Cardamom Steles to her father, \#4\\Amanita has disappeared.\\I don$\rq$t know where she has gone, Papa. The last I saw her was over dinner, and she had just spoken to someone about the disappearances, and then--\\
+
+
+  
+    then-- then she was gone too. And no one speaks of her, and I am so so scared, Papa, do they all know? Everyone must have a friend who$\rq$s just vanished, into thin air, into non-being.\\Where did they go?\\
+
+
+  
+    They keep shutting things down, too-- we haven$\rq$t been on a trip for the Geology Corps in weeks, all the apparati that collect media in the main dome are gone, the Apothecary Corps haven$\rq$t been open for months... it$\rq$s like termites are eating the Grand from the inside, leaving a hollow shell.\\I think they$\rq$ve started scanning the letters, we write too...\\
+
+
+  
+    This letter has taken so much courage to write, and I don$\rq$t have the courage to tell people myself, but if no one here can hold the knowledge I hope and pray you can send the word out... it$\rq$s a vain hope for this to spread from somewhere as backwater as Brackenfalls, but please, please, do your best. Remember them, Papa... Amanita Libera, Jasmine Ward, Theodore Cha... please, remember them... and please forgive my cowardice, that I foist the responsibility onto you.\\
+
+
+  
+    i can no longer write, my hands shake so much, please, rescue us.\\
+
+\newpage
+
+\label{sec:lore/experiment1}
+\subsection*{Wooleye Instance Notes}
+
+
+  
+    I only managed to find these five entries from this log.\\Detonation \#26\\Location: Carpenter$\rq$s North\\Population: 174\\Nodes Formed: 3\\Node Distance from Epicenter: 55-80m vertical, 85-156m horizontal\\Media Generation: 1320 uÎ¸/min\\
+
+
+  
+    Detonation \#27\\Location: Brackenfalls\\Population: 79\\Nodes Formed: 1\\Node Distance from Epicenter: 95m vertical, 67m horizontal\\Media Generation: 412 uÎ¸/min\\
+
+
+  
+    Detonation \#28\\Location: Greyston\\Population: approx. 1000\\Nodes Formed: 18\\Node Distance from Epicenter: 47-110m vertical, 59-289m horizontal\\Media Generation: 8478 uÎ¸/min\\
+
+
+  
+    Detonation \#29\\Location: Unnamed; village two days west of Greyston\\Population: 35\\Nodes Formed: 0\\Node Distance from Epicenter: N/A\\Media Generation: N/A\\Note: inhabitants still affected in the normal way\\
+
+
+  
+    Detonation \#30\\Location: Boiling Brook\\Population: 231\\Nodes Formed: 4\\Node Distance from Epicenter: 61-89m vertical, 78-191m horizontal\\Media Generation: 1862 uÎ¸/min\\
+
+
+  
+    Conclusion: approx 60 needed for one node. Too few consumes them but does not provide enough energy for node formation. Little correlation between input count and breadth/depth.\\Effects on inhabitants still consistently more severe than with single-target testing, especially the physical effects.\\
+
+\newpage
+
+\label{sec:lore/experiment2}
+\subsection*{Wooleye Interview Logs}
+
+
+  
+    These documents were heavily redacted. I have copied the readable text from them here.\\Subject \#1 $\rq\rq$A.E.$\rq\rq$
+
+Stopped struggling immediately after procedure. Facial expression and limbs slack, but can stand unassisted. When left unattended, absently pantomimes actions commonly done in previous profession (groundskeeping).\\
+
+
+  
+    Heartrate high immediately after procedure, but this is inconclusive due to state of fear immediately before. Resulting bud produced 35 uÎ¸/min.
+
+...
+
+Subject \#4 $\rq\rq$P.I.$\rq\rq$
+
+Psychological tests run on P.I. Subject has object permanence, spatial awareness, basic numerical reasoning. Difficulty learning new tasks. \\ ...\\
+
+
+  
+    Subject \#7 $\rq\rq$T.C.$\rq\rq$
+
+Similar results several hours after the procedure to other subjects: able to stand, perform simple tasks... \\Subject \#11 $\rq\rq$R.S.$\rq\rq$
+
+Sedated before procedure...\\ ...\\
+
+
+  
+    Subject \#23 $\rq\rq$A.L.$\rq\rq$
+
+Ability to speak retained to a greater degree than most subjects; dwindled to broken sentences, then a single word $\rq\rq$card$\rq\rq$ over the course of several hours.\\For further testing: how does the procedure affect previous Hexcasters vs. non-Hexcasters?\\ ...\\
+
+\newpage
+
+\label{sec:lore/inventory}
+\subsection*{Restoration Log \#72}
+
+
+  
+    Cell 39, Restoration Log \#72, Detainment Center Beta\\Prisoner Name: Raphael Barr
+
+Crime: Knowledge of Project Wooleye
+
+Reason for Cell Vacancy: Death
+
+Additional notes: The following letter was scrawled over most of the wall space.\\
+
+
+  
+    I see hexagons when I close my eyes.\\The patterns, they invade the space between my eyes and my eyelids, my mind, my dreams. I sparkle in and out of lucidity, like a crystal dangling from a string, sometimes catching the light, sometimes consumed by it.\\
+
+
+  
+    I am more lucid today. Maybe. I cannot tell anymore. I cannot even say I am tired anymore; at some point the constant companion of exhaustion left me, even as something else came to prick at my eyes. I can$\rq$t sense the fatigue. But it$\rq$s there.\\My bones are fragile. My joints are rough and sharp.\\
+
+
+  
+    Sometimes why I am here comes back to me. I remember being too loud about something I knew ... I remember a very bright room where I was told things. I remember my thoughts freezing into glass, shattered, melted and recrystallized over and over and over and over and over with a purpose behind them to make me forget worse than that to keep me alive while killing me, my self, the iota of ME being meaningless because there would be no observer just a body but I tricked them I did it somehow\\
+
+
+  
+    they thought they broke me beyond the point of pulling the wool over my eyes but i was awake enough and am awake enough to feel PAIN\\I do not sleep but when i wake up I cannot rub the crust off of my eyes because it would cut my skin and I do not want to see the purple glints inside\\
+
+
+  
+    They do not kill me, because my husband has my focus, and he would know if I died. But he is no Hexcaster and could not find me with his mediocre skill. i am out of ambit\\it  h urts to think. quite literally. the thoughts are so wasteful now the leftover striates directly onto the million microcrystals\\
+
+
+  
+    i remember the doctors in the bright room forcing me to inhale something like sand but sharper and it hurt so much. At first just the physical pain of mucous membranes trying to absorb shatterglass but then they got their fingernails into my stimulus-response and they could do it with a word\\i remember camping out and seeing the corps setting up their circle all around a village and the ground under my feet rumbling\\
+
+
+  
+    drift out of time. Sometimes I believe I see visions of the future, because they seem to make sense but cannot happen now because I know i will be here until forever because the white room men said so. i see myself toppling over and my skull cracking open into halves and inside will be spears of not-amethyst dripping with blood piercing the wrinkled three pounds of fat and meat dreaming that it is a butterfly\\
+
+
+  
+    i hope my students are alright. why do i think that? waste. they told me i$\rq$m a waste, they couldn$\rq$t be content with destroying me they had to make me feel like I deserved it the whole time, too. No sticks or stones to break my bones, just words to hurt me. if they released me no one would believe me because my body is inspectable fully i just look like one more addicted to overcasting\\But they locked me up insted and i dont know if it$\rq$s a mercy\\
+
+
+  
+    with all the media around I tried many times to cast a hex and get me out or at the least snuff out my suffering but the patterns that march through the fields of my mind snicker and dissolve when I try to reach for them. i think i remember being forced to forget them, I remember grand structures of knowledge interlinked getting chipped away and splintering as it fell apart under the weight of forced ignorance but it hurts so much to try to remember forgetting what you remembered you thought you knew\\
+
+
+  
+    maybe I am just in the late late late late stages of overcasting dependency, the patterns papercutting into the space between my eyes and my eyelids I have heard of, the purple edges of my nerves i have heard of. is there any point trying to make myself believe what is true I am not being tortured. I deserve this. if i will never have anyone to discuss it with ever again why try\\
+
+
+  
+    they$\rq$re going to kill everyone n the whole world aren$\rq$t they the grand needs to eat just as much as i ... when did i lasst eat\\everyone else has to eat and they cannot do that if all the farmers in the world are empty and all the knowledge of farming is underground or at least someone else is going to Find out and melt their smug faces to wax\\
+
+
+  
+    maybe wake up someday and wonder about all the thngs we left them and wonder why there are million miles of tunnels underground with no one smart enough to mine them\\i can see them reading this . they ... will be too far gone to care\\
+
+\newpage
+
+\label{sec:interop}
+
+\section*{Cross-Mod Compatibility}
+  It appears I have installed some mods Hexcasting interoperates with! I$\rq$ve detailed them here.\\
+
+
+
+\label{sec:interop/interop}
+\subsection*{Cross-Mod Interations}
+
+
+  
+    The art of Hexcasting is versatile. If I find that my world has been modified by certain other powers, it$\rq$s possible that I may use Hexcasting in harmony and combination with them.\\
+
+
+  
+    I should keep in mind, however, that Nature seems to have paid less attention in crafting these aspects of my art; strange behavior and bugs are to be expected. I$\rq$m sure the mod developer will do her best to correct them, but I must remember this is a less important pastime to her.\\I may also find that there are sharp disregards to balance in the costs and effects of the interoperating powers. In such a case I suppose I will have to be responsible and restrain myself from using them.\\
+
+
+  
+    Finally, if I find myself interested in the lore and stories of this world, I do not think any notes compiled while examining these interoperations should be considered as anything more than light trifles.\\
+
+\newpage
+
+\label{sec:interop/pehkui}
+\subsection*{Pehkui}
+
+
+  
+    I have discovered methods of changing the size of entities, and querying how much larger or smaller they are than normal.\\
+
+
+  \label{sec: interop/pehkui@hexcasting:interop/pehkui/get}
+\subsubsection*{Gulliver$\rq$s Purification (entity $\rightarrow$ num)}
+
+    Pattern: $aawawwawwa$\\
+      Get the scale of the entity, as a proportion of their normal size. For most entities, this will be 1.\\
+
+
+  \label{sec: interop/pehkui@hexcasting:interop/pehkui/set}
+\subsubsection*{Alter Scale (entity, num $\rightarrow$)}
+
+    Pattern: $ddwdwwdwwd$\\
+      Set the scale of the entity, passing in a proportion of their normal size. Costs about 1 Amethyst Shard.\\
+
+\newpage
+
+\label{sec:patterns}
+
+\section*{Patterns}
+  A list of all the patterns I$\rq$ve discovered, as well as what they do.\\
+
+
+
+\label{sec:patterns/readers_guide}
+\subsection*{How to Read This Section}
+
+
+  
+    I$\rq$ve divided all the valid patterns I$\rq$ve found into sections based on what they do, more or less. I$\rq$ve written down the stroke order of the patterns as well, if I managed to find it in my studies, with the start of the pattern marked with a red dot.\\If an action is cast by multiple patterns, as is the case with some, I$\rq$ll write them all side-by-side.\\
+
+
+  
+    For a few patterns, however, I was not able to find the stroke order, just the shape. I suspect the order to draw them in are out there, locked away in the ancient libraries and dungeons of the world.\\In such cases I just draw the pattern without any information on the order to draw it in.\\
+
+
+  
+    I also write the types of iota that the action will consume or modify, a $\rq\rq$$\rightarrow$$\rq\rq$, and the types of iota the action will create.\\For example, $\rq\rq$vector, number $\rightarrow$ vector$\rq\rq$ means the action will remove a vector and a number from the top of the stack, and then add a vector; or, put another way, will remove a number from the stack, and then modify the vector at the top of the stack. (The number needs to be on the top of the stack, with the vector right below it.)\\
+
+
+  
+    $\rq\rq$$\rightarrow$ entity$\rq\rq$ means it$\rq$ll just push an entity. $\rq\rq$entity, vector $\rightarrow$$\rq\rq$ means it removes an entity and a vector, and doesn$\rq$t push anything.\\Finally, if I find the little dot marking the stroke order too slow or confusing, I can press Control/Command to display a gradient, where the start of the pattern is darkest and the end is lightest. This works on scrolls and when casting, too!\\
+
+\newpage
+
+\label{sec:patterns/basics}
+\subsection*{Basic Patterns}
+
+
+  \label{sec: patterns/basics@hexcasting:get_caster}
+\subsubsection*{Mind$\rq$s Reflection ($\rightarrow$ entity | null)}
+
+    Pattern: $qaq$\\
+      Adds me, the caster, to the stack.\\
+
+
+  \label{sec: patterns/basics@hexcasting:entity_pos/eye}
+\subsubsection*{Compass$\rq$ Purification (entity $\rightarrow$ vector)}
+
+    Pattern: $aa$\\
+      Transforms an entity on the stack into the position of its eyes. I should probably use this on myself.\\
+
+
+  \label{sec: patterns/basics@hexcasting:entity_pos/foot}
+\subsubsection*{Compass$\rq$ Purification II (entity $\rightarrow$ vector)}
+
+    Pattern: $dd$\\
+      Transforms an entity on the stack into the position it is standing. I should probably use this on other entities.\\
+
+
+  \label{sec: patterns/basics@hexcasting:get_entity_look}
+\subsubsection*{Alidade$\rq$s Purification (entity $\rightarrow$ vector)}
+
+    Pattern: $wa$\\
+      Transforms an entity on the stack into the direction it$\rq$s looking in, as a unit vector.\\
+
+
+  \label{sec: patterns/basics@hexcasting:raycast}
+\subsubsection*{Archer$\rq$s Distillation (vector, vector $\rightarrow$ vector | null)}
+
+    Pattern: $wqaawdd$\\
+      Combines two vectors (a position and a direction) into the answer to the question: If I stood at the position and looked in the direction, what block would I be looking at? Costs a negligible amount of media.\\
+
+
+  
+    If it doesn$\rq$t hit anything, the vectors will combine into Null.\\A common sequence of patterns, the so-called $\rq\rq$raycast mantra,$\rq\rq$ is Mind$\rq$s Reflection, Compass Purification, Mind$\rq$s Reflection, Alidade Purification, Archer$\rq$s Distillation. Together, they return the vector position of the block I am looking at.\\
+
+
+  \label{sec: patterns/basics@hexcasting:raycast/axis}
+\subsubsection*{Architect$\rq$s Distillation (vector, vector $\rightarrow$ vector | null)}
+
+    Pattern: $weddwaa$\\
+      Like Archer$\rq$s Distillation, but instead returns a vector representing the answer to the question: Which side of the block am I looking at? Costs a negligible amount of media.\\
+
+
+  
+    More specifically, it returns the normal vector of the face hit, or a unit vector pointing perpendicular to the face.\\If I am looking at a floor, it will return (0, 1, 0).\\If I am looking at the south face of a block, it will return (0, 0, 1).\\
+
+
+  \label{sec: patterns/basics@hexcasting:raycast/entity}
+\subsubsection*{Scout$\rq$s Distillation (vector, vector $\rightarrow$ entity | null)}
+
+    Pattern: $weaqa$\\
+      Like Archer$\rq$s Distillation, but instead returns the entity I am looking at. Costs a negligible amount of media.\\
+
+
+  \label{sec: patterns/basics@hexcasting:print}
+\subsubsection*{Reveal (any $\rightarrow$ any)}
+
+    Pattern: $de$\\
+      Displays the top iota of the stack to me.\\
+
+
+  \label{sec: patterns/basics@hexcasting:get_entity_height}
+\subsubsection*{Stadiometer$\rq$s Prfn. (entity $\rightarrow$ num)}
+
+    Pattern: $awq$\\
+      Transforms an entity on the stack into its height.\\
+
+
+  \label{sec: patterns/basics@hexcasting:get_entity_velocity}
+\subsubsection*{Pace Purification (entity $\rightarrow$ vector)}
+
+    Pattern: $wq$\\
+      Transforms an entity on the stack into the direction in which it$\rq$s moving, with the speed of that movement as that direction$\rq$s magnitude.\\
+
+\newpage
+
+\label{sec:patterns/numbers}
+\subsection*{Number Literals}
+
+
+  \label{sec: patterns/numbers@Numbers}
+\subsubsection*{Numerical Reflection ($\rightarrow$ number)}
+
+    Pattern: $aqaa$\\
+    Pattern: $dedd$\\
+      Irritatingly, there is no easy way to draw numbers. Here is the method Nature deigned to give us.\\
+
+
+  
+    First, I draw one of the two shapes shown on the other page. Next, the angles following will modify a running count starting at 0.\\Forward: Add 1\\Left: Add 5\\Right: Add 10\\Sharp Left: Multiply by 2\\Sharp Right: Divide by 2.
+
+The clockwise version of the pattern, on the right of the other page, will negate the value at the very end. (The left-hand counter-clockwise version keeps the number positive).\\Once I finish drawing, the number$\rq$s pushed to the top of the stack.\\
+
+
+  \subsubsection*{Example 1}
+
+    Pattern: $aqaae$\\
+      This pattern pushes 10.\\
+
+
+
+  \subsubsection*{Example 2}
+
+    Pattern: $aqaaqww$\\
+      This pattern pushes 7: 5 + 1 + 1.\\
+
+
+
+  \subsubsection*{Example 3}
+
+    Pattern: $deddwqea$\\
+      This pattern pushes -32: negate 1 + 5 + 10 * 2.\\
+
+
+
+  \subsubsection*{Example 4}
+
+    Pattern: $aqaaqdww$\\
+      This pattern pushes 4.5: 5 / 2 + 1 + 1.\\
+
+
+
+  
+    In certain cases it might be easier to just use an Abacus. But, it$\rq$s worth knowing the $\rq\rq$proper$\rq\rq$ way to do things.\\
+
+\newpage
+
+\label{sec:patterns/math}
+\subsection*{Mathematics}
+
+
+  
+    Many mathematical operations function on both numbers and vectors. Such arguments are written as $\rq\rq$num|vec$\rq\rq$.\\
+
+
+  
+
+  \label{sec: patterns/math@hexcasting:add}
+\subsubsection*{Additive Distillation (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $waaw$\\
+      Perform addition.\\
+
+
+  
+    As such:\\With two numbers at the top of the stack, combines them into their sum.\\With a number and a vector, removes the number from the stack and adds it to each element of the vector.\\With two vectors, combines them by summing corresponding components into a new vector (i.e. [1, 2, 3] + [0, 4, -1] = [1, 6, 2]).\\
+
+
+  \label{sec: patterns/math@hexcasting:sub}
+\subsubsection*{Subtractive Distillation (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $wddw$\\
+      Perform subtraction.\\
+
+
+  
+    As such:\\With two numbers at the top of the stack, combines them into their difference.\\With a number and a vector, removes the number from the stack and subtracts it from each element of the vector.\\With two vectors, combines them by subtracting each component.\\In all cases, the top of the stack or its components are subtracted from the second-from-the-top.\\
+
+
+  \label{sec: patterns/math@hexcasting:mul}
+\subsubsection*{Multiplicative Dstl. (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $waqaw$\\
+      Perform multiplication or the dot product.\\
+
+
+  
+    As such:\\With two numbers, combines them into their product.\\With a number and a vector, removes the number from the stack and multiplies each component of the vector by that number.\\With two vectors, combines them into their dot product.\\
+
+
+  \label{sec: patterns/math@hexcasting:div}
+\subsubsection*{Division Dstl. (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $wdedw$\\
+      Perform division or the cross product.\\
+
+
+  
+    As such:\\With two numbers, combines them into their quotient.\\With a number and a vector, removes the number and divides it by each element of the vector.\\With two vectors, combines them into their cross product.\\In the first and second cases, the top of the stack or its components comprise the dividend, and the second-from-the-top or its components are the divisor.\\WARNING: Never divide by zero!\\
+
+
+  \label{sec: patterns/math@hexcasting:abs}
+\subsubsection*{Length Purification (num|vec $\rightarrow$ number)}
+
+    Pattern: $wqaqw$\\
+      Compute the absolute value or length.\\
+
+
+  
+    Replaces a number with its absolute value, or a vector with its length.\\
+
+
+  \label{sec: patterns/math@hexcasting:pow}
+\subsubsection*{Power Distillation (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $wedew$\\
+      Perform exponentiation or vector projection.\\
+
+
+  
+    With two numbers, combines them by raising the first to the power of the second.\\With a number and a vector, removes the number and raises each component of the vector to the number$\rq$s power.\\With two vectors, combines them into the vector projection of the top of the stack onto the second-from-the-top.\\In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.\\
+
+
+  \label{sec: patterns/math@hexcasting:floor}
+\subsubsection*{Floor Purification (num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $ewq$\\
+      $\rq\rq$Floors$\rq\rq$ a number, cutting off the fractional component and leaving an integer value. If passed a vector, instead floors each of its components.\\
+
+
+  \label{sec: patterns/math@hexcasting:ceil}
+\subsubsection*{Ceiling Purification (num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $qwe$\\
+      $\rq\rq$Ceilings$\rq\rq$ a number, raising it to the next integer value if it has a fractional component. If passed a vector, instead ceils each of its components.\\
+
+
+  \label{sec: patterns/math@hexcasting:construct_vec}
+\subsubsection*{Vector Exaltation (num, num, num $\rightarrow$ vector)}
+
+    Pattern: $eqqqqq$\\
+      Combine three numbers at the top of the stack into a vector$\rq$s X, Y, and Z components (top to bottom).\\
+
+
+  \label{sec: patterns/math@hexcasting:deconstruct_vec}
+\subsubsection*{Vector Disintegration (vector $\rightarrow$ num, num, num)}
+
+    Pattern: $qeeeee$\\
+      Split a vector into its X, Y, and Z components (top to bottom).\\
+
+
+  \label{sec: patterns/math@hexcasting:modulo}
+\subsubsection*{Modulus Distillation (num|vec, num|vec $\rightarrow$ num|vec)}
+
+    Pattern: $addwaad$\\
+      Takes the modulus of two numbers. This is the amount remaining after division - for example, 5 % 2 is 1, and 5 % 3 is 2. When applied on vectors, performs the above operation elementwise.\\
+
+
+  \label{sec: patterns/math@hexcasting:coerce_axial}
+\subsubsection*{Axial Purification (vec|num $\rightarrow$ vec|num)}
+
+    Pattern: $qqqqqaww$\\
+      For a vector, coerce it to its nearest axial direction, a unit vector. For a number, return the sign of the number; 1 if positive, -1 if negative. In both cases, zero is unaffected.\\
+
+
+  \label{sec: patterns/math@hexcasting:random}
+\subsubsection*{Entropy Reflection ($\rightarrow$ num)}
+
+    Pattern: $eqqq$\\
+      Creates a random number between 0 and 1.\\
+
+\newpage
+
+\label{sec:patterns/consts}
+\subsection*{Constants}
+
+
+  \label{sec: patterns/consts@hexcasting:const/true}
+\subsubsection*{True Reflection ($\rightarrow$ bool)}
+
+    Pattern: $aqae$\\
+      Adds True to the top of the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/false}
+\subsubsection*{False Reflection ($\rightarrow$ bool)}
+
+    Pattern: $dedq$\\
+      Adds False to the top of the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/null}
+\subsubsection*{Nullary Reflection ($\rightarrow$ null)}
+
+    Pattern: $d$\\
+      Adds the Null influence to the top of the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/vec/0}
+\subsubsection*{Vector Reflection Zero ($\rightarrow$ vector)}
+
+    Pattern: $qqqqq$\\
+      Adds [0, 0, 0] to the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/vec/x}
+\subsubsection*{Vector Rfln. +X/-X ($\rightarrow$ vector)}
+
+    Pattern: $qqqqqea$\\
+    Pattern: $eeeeeqa$\\
+      The left-hand counter-clockwise pattern adds [1, 0, 0] to the stack; the right-hand clockwise pattern adds [-1, 0, 0].\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/vec/y}
+\subsubsection*{Vector Rfln. +Y/-Y ($\rightarrow$ vector)}
+
+    Pattern: $qqqqqew$\\
+    Pattern: $eeeeeqw$\\
+      The left-hand counter-clockwise pattern adds [0, 1, 0] to the stack; the right-hand clockwise pattern adds [0, -1, 0].\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/vec/z}
+\subsubsection*{Vector Rfln. +Z/-Z ($\rightarrow$ vector)}
+
+    Pattern: $qqqqqed$\\
+    Pattern: $eeeeeqd$\\
+      The left-hand counter-clockwise pattern adds [0, 0, 1]; the right-hand clockwise pattern adds [0, 0, -1].\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/double/tau}
+\subsubsection*{Circle$\rq$s Reflection ($\rightarrow$ num)}
+
+    Pattern: $eawae$\\
+      Adds Ï„, the radial representation of a complete circle, to the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/double/pi}
+\subsubsection*{Arc$\rq$s Reflection ($\rightarrow$ num)}
+
+    Pattern: $qdwdq$\\
+      Adds Ï€, the radial representation of half a circle, to the stack.\\
+
+
+  \label{sec: patterns/consts@hexcasting:const/double/e}
+\subsubsection*{Euler$\rq$s Reflection ($\rightarrow$ num)}
+
+    Pattern: $aaq$\\
+      Adds e, the base of natural logarithms, to the stack.\\
+
+\newpage
+
+\label{sec:patterns/stackmanip}
+\subsection*{Stack Manipulation}
+
+
+  \label{sec: patterns/stackmanip@hexcasting:pseudo-novice}
+\subsubsection*{Novice$\rq$s Gambit (any $\rightarrow$)}
+
+    Pattern: $a$\\
+      Removes the first iota from the stack.\\This seems to be a special case of Bookkeeper$\rq$s Gambit.\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:swap}
+\subsubsection*{Jester$\rq$s Gambit (any, any $\rightarrow$ any, any)}
+
+    Pattern: $aawdd$\\
+      Swaps the top two iotas of the stack.\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:rotate}
+\subsubsection*{Rotation Gambit (any, any, any $\rightarrow$ any, any, any)}
+
+    Pattern: $aaeaa$\\
+      Yanks the iota third from the top of the stack to the top. [0, 1, 2] becomes [1, 2, 0].\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:rotate_reverse}
+\subsubsection*{Rotation Gambit II (any, any, any $\rightarrow$ any, any, any)}
+
+    Pattern: $ddqdd$\\
+      Yanks the top iota to the third position. [0, 1, 2] becomes [2, 0, 1].\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:duplicate}
+\subsubsection*{Gemini Decomposition (any $\rightarrow$ any, any)}
+
+    Pattern: $aadaa$\\
+      Duplicates the top iota of the stack.\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:over}
+\subsubsection*{Prospector$\rq$s Gambit (any, any $\rightarrow$ any, any, any)}
+
+    Pattern: $aaedd$\\
+      Copy the second-to-last iota of the stack to the top. [0, 1] becomes [0, 1, 0].\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:tuck}
+\subsubsection*{Undertaker$\rq$s Gambit (any, any $\rightarrow$ any, any, any)}
+
+    Pattern: $ddqaa$\\
+      Copy the top iota of the stack, then put it under the second iota. [0, 1] becomes [1, 0, 1].\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:duplicate_n}
+\subsubsection*{Gemini Gambit (any, number $\rightarrow$ many)}
+
+    Pattern: $aadaadaa$\\
+      Removes the number at the top of the stack, then copies the top iota of the stack that number of times. (A count of 2 results in two of the iota on the stack, not three.)\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:2dup}
+\subsubsection*{Dioscuri Gambit (any, any $\rightarrow$ any, any, any, any)}
+
+    Pattern: $aadadaaw$\\
+      Copy the top two iotas of the stack. [0, 1] becomes [0, 1, 0, 1].\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:stack_len}
+\subsubsection*{Flock$\rq$s Reflection ($\rightarrow$ number)}
+
+    Pattern: $qwaeawqaeaqa$\\
+      Pushes the size of the stack as a number to the top of the stack. (For example, a stack of [0, 1] will become [0, 1, 2].)\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:fisherman}
+\subsubsection*{Fisherman$\rq$s Gambit (number $\rightarrow$ any)}
+
+    Pattern: $ddad$\\
+      Grabs the element in the stack indexed by the number and brings it to the top. If the number is negative, instead moves the top element of the stack down that many elements.\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:fisherman/copy}
+\subsubsection*{Fisherman$\rq$s Gambit II (number $\rightarrow$ any)}
+
+    Pattern: $aada$\\
+      Like Fisherman$\rq$s Gambit, but instead of moving the iota, copies it.\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:mask}
+\subsubsection*{Bookkeeper$\rq$s Gambit (many $\rightarrow$ many)}
+
+    Pattern: $aeea$\\
+    Pattern: $eada$\\
+    Pattern: $ae$\\
+      An infinite family of actions that keep or remove elements at the top of the stack based on the sequence of dips and lines.\\
+
+
+  
+    Assuming that I draw a Bookkeeper$\rq$s Gambit pattern left-to-right, the number of iotas the action will require is determined by the horizontal distance covered by the pattern. From deepest in the stack to shallowest, a flat line will keep the iota, whereas a triangle dipping down will remove it.\\If my stack contains 0, 1, 2 from deepest to shallowest, drawing the first pattern opposite will give me 1, the second will give me 0, and the third will give me 0, 2 (the 0 at the bottom is left untouched).\\
+
+
+  \label{sec: patterns/stackmanip@hexcasting:swizzle}
+\subsubsection*{Swindler$\rq$s Gambit (many, number $\rightarrow$ many)}
+
+    Pattern: $qaawdde$\\
+      Rearranges the top elements of the stack based on the given numerical code, which is the index of the permutation wanted.\\
+
+
+  
+      Although I can$\rq$t pretend to know the mathematics behind calculating this permutation code, I have managed to dig up an extensive chart of them, enumerating all permutations of up to six elements.\\If I wish to do further study, the key word is $\rq\rq$Lehmer Code.$\rq\rq$\\
+
+  \href{ https://github.com/gamma-delta/HexMod/wiki/Table-of-Lehmer-Codes-for-Swindler$\rq$s-Gambit }{ Table of Codes }
+
+\newpage
+
+\label{sec:patterns/logic}
+\subsection*{Logical Operators}
+
+
+  \label{sec: patterns/logic@hexcasting:bool_coerce}
+\subsubsection*{Augur$\rq$s Purification (any $\rightarrow$ bool)}
+
+    Pattern: $aw$\\
+      Convert an argument to a boolean. The number 0, Null, and the empty list become False; everything else becomes True.\\
+
+
+  \label{sec: patterns/logic@hexcasting:abs}
+\subsubsection*{Length Purification (bool $\rightarrow$ number)}
+
+    Pattern: $wqaqw$\\
+      Convert a boolean to a number; True becomes 1, and False becomes 0.\\
+
+
+  \label{sec: patterns/logic@hexcasting:not}
+\subsubsection*{Negation Purification (bool $\rightarrow$ bool)}
+
+    Pattern: $dw$\\
+      If the argument is True, return False; if it is False, return True.\\
+
+
+  \label{sec: patterns/logic@hexcasting:or}
+\subsubsection*{Disjunction Distillation (bool, bool $\rightarrow$ bool)}
+
+    Pattern: $waw$\\
+      Returns True if at least one of the arguments are True; otherwise returns False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:and}
+\subsubsection*{Conjunction Distillation (bool, bool $\rightarrow$ bool)}
+
+    Pattern: $wdw$\\
+      Returns True if both arguments are true; otherwise returns False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:xor}
+\subsubsection*{Exclusion Distillation (bool, bool $\rightarrow$ bool)}
+
+    Pattern: $dwa$\\
+      Returns True if exactly one of the arguments is true; otherwise returns False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:if}
+\subsubsection*{Augur$\rq$s Exaltation (bool, any, any $\rightarrow$ any)}
+
+    Pattern: $awdd$\\
+      If the first argument is True, keeps the second and discards the third; otherwise discards the second and keeps the third.\\
+
+
+  \label{sec: patterns/logic@hexcasting:equals}
+\subsubsection*{Equality Distillation (any, any $\rightarrow$ bool)}
+
+    Pattern: $ad$\\
+      If the first argument equals the second (within a small tolerance), return True. Otherwise, return False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:not_equals}
+\subsubsection*{Inequality Distillation (any, any $\rightarrow$ bool)}
+
+    Pattern: $da$\\
+      If the first argument does not equal the second (outside a small tolerance), return True. Otherwise, return False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:greater}
+\subsubsection*{Maximus Distillation (number, number $\rightarrow$ bool)}
+
+    Pattern: $e$\\
+      If the first argument is greater than the second, return True. Otherwise, return False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:less}
+\subsubsection*{Minimus Distillation (number, number $\rightarrow$ bool)}
+
+    Pattern: $q$\\
+      If the first argument is less than the second, return True. Otherwise, return False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:greater_eq}
+\subsubsection*{Maximus Distillation II (number, number $\rightarrow$ bool)}
+
+    Pattern: $ee$\\
+      If the first argument is greater than or equal to the second, return True. Otherwise, return False.\\
+
+
+  \label{sec: patterns/logic@hexcasting:less_eq}
+\subsubsection*{Minimus Distillation II (number, number $\rightarrow$ bool)}
+
+    Pattern: $qq$\\
+      If the first argument is less than or equal to the second, return True. Otherwise, return False.\\
+
+\newpage
+
+\label{sec:patterns/entities}
+\subsection*{Entities}
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity}
+\subsubsection*{Entity Purification (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqa$\\
+      Transform the position on the stack into the entity at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity/animal}
+\subsubsection*{Entity Prfn.: Animal (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqaawa$\\
+      Transform the position on the stack into the animal at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity/monster}
+\subsubsection*{Entity Prfn.: Monster (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqaawq$\\
+      Transform the position on the stack into the monster at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity/item}
+\subsubsection*{Entity Prfn.: Item (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqaaww$\\
+      Transform the position on the stack into the dropped item at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity/player}
+\subsubsection*{Entity Prfn.: Player (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqaawe$\\
+      Transform the position on the stack into the player at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:get_entity/living}
+\subsubsection*{Entity Prfn.: Living (vector $\rightarrow$ entity or null)}
+
+    Pattern: $qqqqqdaqaawd$\\
+      Transform the position on the stack into the living creature at that location (or Null if there isn$\rq$t one).\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/animal}
+\subsubsection*{Zone Dstl.: Animal (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwdeddwa$\\
+      Take a position and maximum distance on the stack, and combine them into a list of animals near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/not_animal}
+\subsubsection*{Zone Dstl.: Non-Animal (vector, number $\rightarrow$ list)}
+
+    Pattern: $eeeeewaqaawa$\\
+      Take a position and maximum distance on the stack, and combine them into a list of non-animal entities near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/monster}
+\subsubsection*{Zone Dstl.: Monster (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwdeddwq$\\
+      Take a position and maximum distance on the stack, and combine them into a list of monsters near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/not_monster}
+\subsubsection*{Zone Dstl.: Non-Monster (vector, number $\rightarrow$ list)}
+
+    Pattern: $eeeeewaqaawq$\\
+      Take a position and maximum distance on the stack, and combine them into a list of non-monster entities near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/item}
+\subsubsection*{Zone Dstl.: Item (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwdeddww$\\
+      Take a position and maximum distance on the stack, and combine them into a list of dropped items near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/not_item}
+\subsubsection*{Zone Dstl.: Non-Item (vector, number $\rightarrow$ list)}
+
+    Pattern: $eeeeewaqaaww$\\
+      Take a position and maximum distance on the stack, and combine them into a list of non-dropped-item entities near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/player}
+\subsubsection*{Zone Dstl.: Player (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwdeddwe$\\
+      Take a position and maximum distance on the stack, and combine them into a list of players near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/not_player}
+\subsubsection*{Zone Dstl.: Non-Player (vector, number $\rightarrow$ list)}
+
+    Pattern: $eeeeewaqaawe$\\
+      Take a position and maximum distance on the stack, and combine them into a list of non-player characters near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/living}
+\subsubsection*{Zone Dstl.: Living (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwdeddwd$\\
+      Take a position and maximum distance on the stack, and combine them into a list of living creatures near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity/not_living}
+\subsubsection*{Zone Dstl.: Non-Living (vector, number $\rightarrow$ list)}
+
+    Pattern: $eeeeewaqaawd$\\
+      Take a position and maximum distance on the stack, and combine them into a list of non-living entities near the position.\\
+
+
+  \label{sec: patterns/entities@hexcasting:zone_entity}
+\subsubsection*{Zone Dstl.: Any (vector, number $\rightarrow$ list)}
+
+    Pattern: $qqqqqwded$\\
+      Take a position and maximum distance on the stack, and combine them into a list of all entities near the position.\\
+
+\newpage
+
+\label{sec:patterns/lists}
+\subsection*{List Manipulation}
+
+
+  \label{sec: patterns/lists@hexcasting:index}
+\subsubsection*{Selection Distillation (list, number $\rightarrow$ any)}
+
+    Pattern: $deeed$\\
+      Remove the number at the top of the stack, then replace the list at the top with the nth element of that list (where n is the number you removed). Replaces the list with Null if the number is out of bounds.\\
+
+
+  \label{sec: patterns/lists@hexcasting:slice}
+\subsubsection*{Selection Exaltation (list, num, num $\rightarrow$ list)}
+
+    Pattern: $qaeaqwded$\\
+      Remove the two numbers at the top of the stack, then take a sublist of the list at the top of the stack between those indices, lower bound inclusive, upper bound exclusive. For example, the 0, 2 sublist of [0, 1, 2, 3, 4] would be [0, 1].\\
+
+
+  \label{sec: patterns/lists@hexcasting:append}
+\subsubsection*{Integration Distillation (list, any $\rightarrow$ list)}
+
+    Pattern: $edqde$\\
+      Remove the top of the stack, then add it to the end of the list at the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:unappend}
+\subsubsection*{Derivation Distillation (list $\rightarrow$ list, any)}
+
+    Pattern: $qaeaq$\\
+      Remove the iota on the end of the list at the top of the stack, and add it to the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:add}
+\subsubsection*{Additive Distillation (list, list $\rightarrow$ list)}
+
+    Pattern: $waaw$\\
+      Remove the list at the top of the stack, then add all its elements to the end of the list at the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:empty_list}
+\subsubsection*{Vacant Reflection ($\rightarrow$ list)}
+
+    Pattern: $qqaeaae$\\
+      Push an empty list to the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:singleton}
+\subsubsection*{Single$\rq$s Purification (any $\rightarrow$ list)}
+
+    Pattern: $adeeed$\\
+      Remove the top of the stack, then push a list containing only that element.\\
+
+
+  \label{sec: patterns/lists@hexcasting:abs}
+\subsubsection*{Length Purification (list $\rightarrow$ num)}
+
+    Pattern: $wqaqw$\\
+      Remove the list at the top of the stack, then push the number of elements in the list to the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:reverse}
+\subsubsection*{Retrograde Purification (list $\rightarrow$ list)}
+
+    Pattern: $qqqaede$\\
+      Reverse the list at the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:index_of}
+\subsubsection*{Locator$\rq$s Distillation (list, any $\rightarrow$ num)}
+
+    Pattern: $dedqde$\\
+      Remove the iota at the top of the stack, then replace the list at the top with the first index of that iota within the list (starting from 0). Replaces the list with -1 if the iota doesn$\rq$t exist in the list.\\
+
+
+  \label{sec: patterns/lists@hexcasting:remove_from}
+\subsubsection*{Excisor$\rq$s Distillation (list, num $\rightarrow$ list)}
+
+    Pattern: $edqdewaqa$\\
+      Remove the number at the top of the stack, then remove the nth element of the list at the top of the stack (where n is the number you removed).\\
+
+
+  \label{sec: patterns/lists@hexcasting:replace}
+\subsubsection*{Surgeon$\rq$s Exaltation (list, num, any $\rightarrow$ list)}
+
+    Pattern: $wqaeaqw$\\
+      Remove the top iota of the stack and the number at the top, then set the nth element of the list at the top of the stack to that iota (where n is the number you removed). Does nothing if the number is out of bounds.\\
+
+
+  \label{sec: patterns/lists@hexcasting:last_n_list}
+\subsubsection*{Flock$\rq$s Gambit (many, num $\rightarrow$ list)}
+
+    Pattern: $ewdqdwe$\\
+      Remove num elements from the stack, then add them to a list at the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:splat}
+\subsubsection*{Flock$\rq$s Disintegration (list $\rightarrow$ many)}
+
+    Pattern: $qwaeawq$\\
+      Remove the list at the top of the stack, then push its contents to the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:construct}
+\subsubsection*{Speaker$\rq$s Distillation (list, any $\rightarrow$ list)}
+
+    Pattern: $ddewedd$\\
+      Remove the top iota, then add it as the first element to the list at the top of the stack.\\
+
+
+  \label{sec: patterns/lists@hexcasting:deconstruct}
+\subsubsection*{Speaker$\rq$s Decomposition (list $\rightarrow$ list, any)}
+
+    Pattern: $aaqwqaa$\\
+      Remove the first iota from the list at the top of the stack, then push that iota to the stack.\\
+
+\newpage
+
+\label{sec:patterns/patterns_as_iotas}
+\subsection*{Escaping Patterns}
+
+
+  
+    One of the many peculiarities of this art is that patterns themselves can act as iotas-- I can even put them onto my stack when casting.\\This raises a fairly obvious question: how do I express them? If I simply drew a pattern, it would hardly tell Nature to add it to my stack-- rather, it would simply be matched to an action.\\
+
+
+  
+    Fortunately, Nature has provided me with a set of influences that I can use to work with patterns directly.\\In short, Consideration lets me add one pattern to the stack, and Introspection and Retrospection let me add a whole list.\\
+
+
+  \label{sec: patterns/patterns_as_iotas@hexcasting:escape}
+\subsubsection*{Consideration}
+
+    Pattern: $qqqaw$\\
+      To use Consideration, I draw it, then another arbitrary pattern. That second pattern is added to the stack.\\
+
+
+  
+    One may find it helpful to think of this as $\rq\rq$escaping$\rq\rq$ the pattern onto the stack, if they happen to be familiar with the science of computers.\\The usual use for this is to copy the pattern to a Scroll or Slate using Scribe$\rq$s Gambit, and then perhaps decorating with them.\\
+
+
+  \label{sec: patterns/patterns_as_iotas@hexcasting:open_paren}
+\subsubsection*{Introspection}
+
+    Pattern: $qqq$\\
+      Drawing Introspection makes my drawing of patterns act differently, for a time. Until I draw Retrospection, the patterns I draw are saved. Then, when I draw Retrospection, they are added to the stack as a list iota.\\
+
+
+  \label{sec: patterns/patterns_as_iotas@hexcasting:close_paren}
+\subsubsection*{Retrospection}
+
+    Pattern: $eee$\\
+      If I draw another Introspection, it$\rq$ll still be saved to the list, but I$\rq$ll then have to draw two Retrospections to get back to normal casting.\\
+
+
+  
+    Also, I can escape the special behavior of Intro- and Retrospection by drawing a Consideration before them, which will simply add them to the list without affecting which the number of Retrospections I need to return to casting.\\If I draw two Considerations in a row while introspecting, it will add a single Consideration to the list.\\
+
+
+  \label{sec: patterns/patterns_as_iotas@hexcasting:undo}
+\subsubsection*{Evanition}
+
+    Pattern: $eeedw$\\
+      Finally, if I make a mistake while drawning patterns inside Intro- and Retrospection I can draw Evanition to remove the last pattern that I drew from the pattern list that is being constructed.\\
+
+\newpage
+
+\label{sec:patterns/readwrite}
+\subsection*{Reading and Writing}
+
+
+  
+    This section deals with the storage of Iotas in a more permanent medium. Nearly any iota can be stored to a suitable item, such as a Focus or Spellbook), and read back later. Certain items, such as an Abacus, can only be read from.\\Iotas are usually read and written from the other hand, but it is also possible to read and write with an item when it is sitting on the ground as an item entity, or when in an item frame.\\
+
+
+  
+    There may be other entities I can interact with in this way. For example, a Scroll hung on the wall can have its pattern read off of it.\\However, it seems I am unable to save a reference to another player, only me. I suppose an entity reference is similar to the idea of a True Name; perhaps Nature is helping to keep our Names out of the hands of enemies. If I want a friend to have my Name I can make a Focus for them.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:read}
+\subsubsection*{Scribe$\rq$s Reflection ($\rightarrow$ any)}
+
+    Pattern: $aqqqqq$\\
+      Copy the iota stored in the item in my other hand and add it to the stack.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:write}
+\subsubsection*{Scribe$\rq$s Gambit (any $\rightarrow$)}
+
+    Pattern: $deeeee$\\
+      Remove the top iota from the stack, and save it into the item in my other hand.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:read/entity}
+\subsubsection*{Chronicler$\rq$s Prfn. (entity $\rightarrow$ any)}
+
+    Pattern: $wawqwqwqwqwqw$\\
+      Like Scribe$\rq$s Reflection, but the iota is read out of an entity instead of my other hand.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:write/entity}
+\subsubsection*{Chronicler$\rq$s Gambit (entity, any $\rightarrow$)}
+
+    Pattern: $wdwewewewewew$\\
+      Like Scribe$\rq$s Gambit, but the iota is written to an entity instead of my other hand.\\Interestingly enough, it looks like I cannot write my own Name using this spell. I get a sense that I might be endangered if I could.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:readable}
+\subsubsection*{Auditor$\rq$s Reflection ($\rightarrow$ bool)}
+
+    Pattern: $aqqqqqe$\\
+      If the item in my other hand holds an iota I can read, returns True. Otherwise, returns False.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:readable/entity}
+\subsubsection*{Auditor$\rq$s Purification (entity $\rightarrow$ bool)}
+
+    Pattern: $wawqwqwqwqwqwew$\\
+      Like Auditor$\rq$s Reflection, but the readability of an entity is checked instead of my other hand.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:writable}
+\subsubsection*{Assessor$\rq$s Reflection ($\rightarrow$ bool)}
+
+    Pattern: $deeeeeq$\\
+      If I could save an iota into the item in my other hand, returns True. Otherwise, returns False.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:writable/entity}
+\subsubsection*{Assessor$\rq$s Purification (entity $\rightarrow$ bool)}
+
+    Pattern: $wdwewewewewewqw$\\
+      Like Assessor$\rq$s Reflection, but the writability of an entity is checked instead of my other hand.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:local}
+\subsubsection*{The Ravenmind}
+
+    Items are not the only places I can store information, however. I am also able to store that information in the media of the Hex itself, much like the stack, but separate. Texts refer to this as the ravenmind. It holds a single iota, much like a Focus, and begins with Null like the same. It is preserved between iterations of Thoth$\rq$s Gambit, but only lasts as long as the Hex it$\rq$s a part of. Once I stop casting, the value will be lost.\\
+
+  \label{sec: patterns/readwrite@hexcasting:write/local}
+\subsubsection*{Huginn$\rq$s Gambit (any $\rightarrow$)}
+
+    Pattern: $eqqwawqaaw$\\
+      Removes the top iota from the stack, and saves it to my ravenmind, storing it there until I stop casting the Hex.\\
+
+
+  \label{sec: patterns/readwrite@hexcasting:read/local}
+\subsubsection*{Muninn$\rq$s Reflection ($\rightarrow$ any)}
+
+    Pattern: $qeewdweddw$\\
+      Copy the iota out of my ravenmind, which I likely just wrote with Huginn$\rq$s Gambit.\\
+
+\newpage
+
+\label{sec:patterns/advanced_math}
+\subsection*{Advanced Mathematics}
+
+
+  \label{sec: patterns/advanced_math@hexcasting:sin}
+\subsubsection*{Sine Purification (num $\rightarrow$ num)}
+
+    Pattern: $qqqqqaa$\\
+      Takes the sine of an angle in radians, yielding the vertical component of that angle drawn on a unit circle. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:cos}
+\subsubsection*{Cosine Purification (num $\rightarrow$ num)}
+
+    Pattern: $qqqqqad$\\
+      Takes the cosine of an angle in radians, yielding the horizontal component of that angle drawn on a unit circle. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:tan}
+\subsubsection*{Tangent Purification (num $\rightarrow$ num)}
+
+    Pattern: $wqqqqqadq$\\
+      Takes the tangent of an angle in radians, yielding the slope of that angle drawn on a circle. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:arcsin}
+\subsubsection*{Inverse Sine Prfn. (num $\rightarrow$ num)}
+
+    Pattern: $ddeeeee$\\
+      Takes the inverse sine of a value with absolute value 1 or less, yielding the angle whose sine is that value. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:arccos}
+\subsubsection*{Inverse Cosine Prfn. (num $\rightarrow$ num)}
+
+    Pattern: $adeeeee$\\
+      Takes the inverse cosine of a value with absolute value 1 or less, yielding the angle whose cosine is that value. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:arctan}
+\subsubsection*{Inverse Tangent Prfn. (num $\rightarrow$ num)}
+
+    Pattern: $eadeeeeew$\\
+      Takes the inverse tangent of a value, yielding the angle whose tangent is that value. Related to the values of Ï€ and Ï„.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:arctan2}
+\subsubsection*{Inverse Tan. Prfn. II (num, num $\rightarrow$ num)}
+
+    Pattern: $deadeeeeewd$\\
+      Takes the inverse tangent of a Y and X value, yielding the angle between the X-axis and a line from the origin to that point.\\
+
+
+  \label{sec: patterns/advanced_math@hexcasting:logarithm}
+\subsubsection*{Logarithmic Distillation (num, num $\rightarrow$ num)}
+
+    Pattern: $eqaqe$\\
+      Removes the number at the top of the stack, then takes the logarithm of the number at the top using the other number as its base. Related to the value of e.\\
+
+\newpage
+
+\label{sec:patterns/sets}
+\subsection*{Sets}
+
+
+  
+    Set operations are odd, in that some of them can accept two numbers or two lists, but not a combination thereof. Such arguments will be written as $\rq\rq$(num, num)|(list, list)$\rq\rq$.\\When numbers are used in those operations, they are being used as so-called binary $\rq\rq$bitsets$\rq\rq$, lists of 1 and 0, true and false, $\rq\rq$on$\rq\rq$ and $\rq\rq$off$\rq\rq$.\\
+
+
+  
+
+  \label{sec: patterns/sets@hexcasting:or}
+\subsubsection*{Disjunction Distillation ((num, num)|(list, list) $\rightarrow$ num|list)}
+
+    Pattern: $waw$\\
+      Unifies two sets.\\
+
+
+  
+    As such:\\With two numbers at the top of the stack, combines them into a bitset containing every $\rq\rq$on$\rq\rq$ bit in either bitset.\\With two lists, this creates a list of every element from the first list, plus every element from the second list that is not in the first list. This is similar to Combination Distillation.\\
+
+
+  \label{sec: patterns/sets@hexcasting:and}
+\subsubsection*{Conjunction Distillation ((num, num)|(list, list) $\rightarrow$ num|list)}
+
+    Pattern: $wdw$\\
+      Takes the intersection of two sets.\\
+
+
+  
+    As such:\\With two numbers at the top of the stack, combines them into a bitset containing every $\rq\rq$on$\rq\rq$ bit present in both bitsets.\\With two lists, this creates a list of every element from the first list that is also in the second list.\\
+
+
+  \label{sec: patterns/sets@hexcasting:xor}
+\subsubsection*{Exclusion Distillation ((num, num)|(list, list) $\rightarrow$ num|list)}
+
+    Pattern: $dwa$\\
+      Takes the exclusive disjunction of two sets.\\
+
+
+  
+    As such:\\With two numbers at the top of the stack, combines them into a bitset containing every $\rq\rq$on$\rq\rq$ bit present in exactly one of the bitsets.\\With two lists, this creates a list of every element in both lists that is not in the other list.\\
+
+
+  \label{sec: patterns/sets@hexcasting:not}
+\subsubsection*{Negation Purification (num $\rightarrow$ num)}
+
+    Pattern: $dw$\\
+      Takes the inversion of a bitset, changing all $\rq\rq$on$\rq\rq$ bits to $\rq\rq$off$\rq\rq$ and vice versa. In my experience, this will take the form of that number negated and decreased by one. For example, 0 will become -1, and -100 will become 99.\\
+
+
+  \label{sec: patterns/sets@hexcasting:unique}
+\subsubsection*{Uniqueness Purification (list $\rightarrow$ list)}
+
+    Pattern: $aweaqa$\\
+      Removes duplicate entries from a list.\\
+
+\newpage
+
+\label{sec:patterns/meta}
+\subsection*{Meta-Evaluation}
+
+
+  \label{sec: patterns/meta@hexcasting:eval}
+\subsubsection*{Hermes$\rq$ Gambit ([pattern] | pattern $\rightarrow$ many)}
+
+    Pattern: $deaqq$\\
+      Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my Staff (until a Charon$\rq$s Gambit is encountered). If an iota is escaped with Consideration or its ilk, it will be pushed to the stack. Otherwise, non-patterns will fail.\\
+
+
+  
+    This can be very powerful in tandem with Foci.\\It also makes the bureaucracy of Nature a $\rq\rq$Turing-complete$\rq\rq$ system, according to one esoteric scroll I found.\\However, it seems there$\rq$s a limit to how many times a Hex can cast itself-- Nature doesn$\rq$t look kindly on runaway spells!\\In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to become too unstable and immediately unravel.\\
+
+
+  \label{sec: patterns/meta@hexcasting:eval/cc}
+\subsubsection*{Iris$\rq$ Gambit ([pattern] | pattern $\rightarrow$ many)}
+
+    Pattern: $qwaqde$\\
+      Cast a pattern or list of patterns from the stack exactly like Hermes$\rq$ Gambit, except that a unique $\rq\rq$Jump$\rq\rq$ iota is pushed to the stack beforehand. \\
+
+
+  
+    When the $\rq\rq$Jump$\rq\rq$-iota is executed, it$\rq$ll skip the rest of the patterns and jump directly to the end of the pattern list.\\While this may seem redundant given Charon$\rq$s Gambit exists, this allows you to exit nested Hermes$\rq$ invocations in a controlled way, where Charon only allows you to exit one.\\The $\rq\rq$Jump$\rq\rq$ iota will apparently stay on the stack even after execution is finished... better not think about the implications of that.\\
+
+
+  \label{sec: patterns/meta@hexcasting:for_each}
+\subsubsection*{Thoth$\rq$s Gambit (list of patterns, list $\rightarrow$ list)}
+
+    Pattern: $dadad$\\
+      Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list.\\
+
+
+  
+    More specifically, for each element in the second list, it will:\\Create a new stack, with everything on the current stack plus that element\\Draw all the patterns in the first list\\Save all the iotas remaining on the stack to a list
+
+Then, after all is said and done, pushes the list of saved iotas onto the main stack.\\No wonder all the practitioners of this art go mad.\\
+
+
+  \label{sec: patterns/meta@hexcasting:halt}
+\subsubsection*{Charon$\rq$s Gambit}
+
+    Pattern: $aqdee$\\
+      This pattern forcibly halts a Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff.\\
+
+
+  
+    But when combined with Hermes$\rq$ or Thoth$\rq$s Gambits, it becomes far more interesting. Those patterns serve to $\rq$contain$\rq$ that halting, and rather than ending the entire Hex, those gambits end instead. This can be used to cause Thoth$\rq$s Gambit not to operate on every iota it$\rq$s given. An escape from the madness, as it were.\\
+
+\newpage
+
+\label{sec:patterns/circle}
+\subsection*{Spell Circle Patterns}
+
+
+  
+    These patterns must be cast from a Spell Circle; trying to cast them through a Staff will fail rather spectacularly.\\
+
+
+  \label{sec: patterns/circle@hexcasting:circle/impetus_pos}
+\subsubsection*{Waystone Reflection ($\rightarrow$ vector)}
+
+    Pattern: $eaqwqae$\\
+      Returns the position of the Impetus of this spell circle.\\
+
+
+  \label{sec: patterns/circle@hexcasting:circle/impetus_dir}
+\subsubsection*{Lodestone Reflection ($\rightarrow$ vector)}
+
+    Pattern: $eaqwqaewede$\\
+      Returns the direction the Impetus of this spell circle is facing as a unit vector.\\
+
+
+  \label{sec: patterns/circle@hexcasting:circle/bounds/min}
+\subsubsection*{Lesser Fold Reflection ($\rightarrow$ vector)}
+
+    Pattern: $eaqwqaewdd$\\
+      Returns the position of the lower-north-west corner of the bounds of this spell circle.\\
+
+
+  \label{sec: patterns/circle@hexcasting:circle/bounds/max}
+\subsubsection*{Greater Fold Reflection ($\rightarrow$ vector)}
+
+    Pattern: $aqwqawaaqa$\\
+      Returns the position of the upper-south-east corner of the bounds of this spell circle.\\
+
+\newpage
+
+\label{sec:patterns/akashic_patterns}
+\subsection*{Akashic Patterns}
+
+
+  \label{sec: patterns/akashic_patterns@hexcasting:akashic/read}
+\subsubsection*{Akasha$\rq$s Distillation (vector, pattern $\rightarrow$ any)}
+
+    Pattern: $qqqwqqqqqaq$\\
+      Read the iota associated with the given pattern out of the Akashic Library with its Record at the given position. This has no range limit. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/akashic_patterns@hexcasting:akashic/write}
+\subsubsection*{Akasha$\rq$s Gambit (vector, pattern, any $\rightarrow$)}
+
+    Pattern: $eeeweeeeede$\\
+      Associate the iota with the given pattern in the Akashic Library with its Record at the given position. This does have a range limit. Costs about one Amethyst Dust.\\
+
+\newpage
+
+\label{sec:patterns/spells}
+
+\section*{Spells}
+  Patterns and actions that perform a magical effect on the world.\\
+
+
+
+\label{sec:patterns/spells/itempicking}
+\subsection*{Working with Items}
+
+
+  
+    Certain spells, such as Place Block, will consume additional items from my inventory. When this happens, the spell will first look for the item to use, and then draw from all such items in my inventory.\\This process is called $\rq\rq$picking an item.$\rq\rq$\\
+
+
+  
+    More specifically:\\First, the spell will search for the first valid item in my hotbar to the right of my staff, wrapping around at the right-hand side, and starting at the first slot if my staff is in my off-hand.\\Second, the spell will draw that item from as far back in my inventory as possible, prioritizing the main inventory over the hotbar.\\
+
+
+  
+    This way, I can keep a $\rq\rq$chooser$\rq\rq$ item on my hotbar to tell the spell what to use, and fill the rest of my inventory with that item to keep the spell well-stocked.\\
+
+\newpage
+
+\label{sec:patterns/spells/basic}
+\subsection*{Basic Spells}
+
+
+  \label{sec: patterns/spells/basic@hexcasting:explode}
+\subsubsection*{Explosion (vector, number $\rightarrow$)}
+
+    Pattern: $aawaawaa$\\
+      Remove a number and vector from the stack, then create an explosion at the given location with the given power.\\
+
+
+  
+    A power of 3 is about as much as a Creeper$\rq$s blast; 4 is about as much as a TNT blast. Nature refuses to give me a blast of more than 10 power, though.\\Strangely, this explosion doesn$\rq$t seem to harm me. Perhaps it$\rq$s because I am the one exploding?\\Costs a negligible amount at power 0, plus 3 extra Amethyst Dust per point of explosion power.\\
+
+
+  \label{sec: patterns/spells/basic@hexcasting:explode/fire}
+\subsubsection*{Fireball (vector, number $\rightarrow$)}
+
+    Pattern: $ddwddwdd$\\
+      Remove a number and vector from the stack, then create a fiery explosion at the given location with the given power.\\
+
+
+  
+    Costs one Amethyst Dust, plus about 3 extra Amethyst Dusts per point of explosion power. Otherwise, the same as Explosion, except with fire.\\
+
+
+  \label{sec: patterns/spells/basic@hexcasting:add_motion}
+\subsubsection*{Impulse (entity, vector $\rightarrow$)}
+
+    Pattern: $awqqqwaqw$\\
+      Remove an entity and direction from the stack, then give a shove to the given entity in the given direction. The strength of the impulse is determined by the length of the vector.
+
+Costs units of Amethyst Dust equal to the square of the length of the vector, plus one for every Impulse except the first targeting an entity.\\
+
+
+  \label{sec: patterns/spells/basic@hexcasting:blink}
+\subsubsection*{Blink (entity, number $\rightarrow$)}
+
+    Pattern: $awqqqwaq$\\
+      Remove an entity and length from the stack, then teleport the given entity along its look vector by the given length.
+
+Costs about one Amethyst Shard per two blocks travelled.\\
+
+
+  \label{sec: patterns/spells/basic@hexcasting:beep}
+\subsubsection*{Make Note (vector, number, number $\rightarrow$)}
+
+    Pattern: $adaa$\\
+      Remove a vector and two numbers from the stack. Plays an instrument defined by the first number at the given location, with a note defined by the second number. Costs a negligible amount of media.\\
+
+
+  
+    There appear to be 16 different instruments and 25 different notes. Both are indexed by zero.\\These seem to be the same instruments I can produce with a Note Block, though the reason for each instrument$\rq$s number being what it is eludes me.\\Either way, I can find the numbers I need to use by inspecting a Note Block through a Scrying Lens.\\
+
+\newpage
+
+\label{sec:patterns/spells/blockworks}
+\subsection*{Block Manipulation}
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:place_block}
+\subsubsection*{Place Block (vector $\rightarrow$)}
+
+    Pattern: $eeeeede$\\
+      Remove a location from the stack, then pick a block item and place it at the given location.
+
+Costs about an eighth of one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:break_block}
+\subsubsection*{Break Block (vector $\rightarrow$)}
+
+    Pattern: $qaqqqqq$\\
+      Remove a location from the stack, then break the block at the given location. This spell can break nearly anything a Diamond Pickaxe can break.
+
+Costs about an eighth of one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:create_water}
+\subsubsection*{Create Water (vector $\rightarrow$)}
+
+    Pattern: $aqawqadaq$\\
+      Summon a block of water (or insert up to a bucket$\rq$s worth) into a block at the given position. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:destroy_water}
+\subsubsection*{Destroy Liquid (vector $\rightarrow$)}
+
+    Pattern: $dedwedade$\\
+      Drains either a liquid container at, or a body of liquid around, the given position. Costs about two Charged Amethyst.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:conjure_block}
+\subsubsection*{Conjure Block (vector $\rightarrow$)}
+
+    Pattern: $qqa$\\
+      Conjure an ethereal, but solid, block that sparkles with my pigment at the given position. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:conjure_light}
+\subsubsection*{Conjure Light (vector $\rightarrow$)}
+
+    Pattern: $qqd$\\
+      Conjure a magical light that softly glows with my pigment at the given position. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:bonemeal}
+\subsubsection*{Overgrow (vector $\rightarrow$)}
+
+    Pattern: $wqaqwawqaqw$\\
+      Encourage a plant or sapling at the target position to grow, as if Bonemeal was applied. Costs a bit more than one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:edify}
+\subsubsection*{Edify Sapling (vector $\rightarrow$)}
+
+    Pattern: $wqaqwd$\\
+      Forcibly infuse media into the sapling at the target position, causing it to grow into an Edified Tree. Costs about one Charged Amethyst.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:ignite}
+\subsubsection*{Ignite Block (vector $\rightarrow$)}
+
+    Pattern: $aaqawawa$\\
+      Start a fire on top of the given location, as if a Fire Charge was applied. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/blockworks@hexcasting:extinguish}
+\subsubsection*{Extinguish Area (vector $\rightarrow$)}
+
+    Pattern: $ddedwdwd$\\
+      Extinguish blocks in a large area. Costs about six Amethyst Dust.\\
+
+\newpage
+
+\label{sec:patterns/spells/nadirs}
+\subsection*{Nadirs}
+
+
+  
+    This family of spells all impart a negative potion effect upon an entity. They all take an entity, the recipient, and one or two numbers, the first being the duration and the second, if present, being the potency (starting at 1).\\Each one has a $\rq\rq$base cost;$\rq\rq$ the actual cost is equal to that base cost, multiplied by the potency squared.\\
+
+
+  
+    According to certain legends, these spells and their sisters, the Zeniths, were $\rq\rq$[...] inspired by a world near to this one, where powerful wizards would gather magic from the land and hold duels to the death. Unfortunately, much was lost in translation...$\rq\rq$\\Perhaps that is the reason for their peculiar names.\\
+
+
+  \label{sec: patterns/spells/nadirs@hexcasting:potion/weakness}
+\subsubsection*{White Sun$\rq$s Nadir (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqqqqaqwawaw$\\
+      Inflicts weakness. Base cost is one Amethyst Dust per 10 seconds.\\
+
+
+  \label{sec: patterns/spells/nadirs@hexcasting:potion/levitation}
+\subsubsection*{Blue Sun$\rq$s Nadir (entity, number $\rightarrow$)}
+
+    Pattern: $qqqqqawwawawd$\\
+      Inflicts levitation. Base cost is one Amethyst Dust per 5 seconds.\\
+
+
+  \label{sec: patterns/spells/nadirs@hexcasting:potion/wither}
+\subsubsection*{Black Sun$\rq$s Nadir (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqqqqaewawawe$\\
+      Inflicts withering. Base cost is one Amethyst Dust per second.\\
+
+
+  \label{sec: patterns/spells/nadirs@hexcasting:potion/poison}
+\subsubsection*{Red Sun$\rq$s Nadir (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqqqqadwawaww$\\
+      Inflicts poison. Base cost is one Amethyst Dust per 3 seconds.\\
+
+
+  \label{sec: patterns/spells/nadirs@hexcasting:potion/slowness}
+\subsubsection*{Green Sun$\rq$s Nadir (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqqqqadwawaw$\\
+      Inflicts slowness. Base cost is one Amethyst Dust per 5 seconds.\\
+
+\newpage
+
+\label{sec:patterns/spells/hexcasting}
+\subsection*{Crafting Casting Items}
+
+
+  
+    These three spells each create an item that casts a Hex.
+
+They all require me to hold the empty item in my off-hand, and require two things: the list of patterns to be cast, and an entity representing a dropped stack of Amethyst to form the item$\rq$s battery.\\See this entry for more information.\\
+
+
+  \label{sec: patterns/spells/hexcasting@hexcasting:craft/cypher}
+\subsubsection*{Craft Cypher (entity, [pattern] $\rightarrow$)}
+
+    Pattern: $waqqqqq$\\
+      Costs about one Charged Amethyst.\\
+
+
+  \label{sec: patterns/spells/hexcasting@hexcasting:craft/trinket}
+\subsubsection*{Craft Trinket (entity, [pattern] $\rightarrow$)}
+
+    Pattern: $wwaqqqqqeaqeaeqqqeaeq$\\
+      Costs about five Charged Amethysts.\\
+
+
+  \label{sec: patterns/spells/hexcasting@hexcasting:craft/artifact}
+\subsubsection*{Craft Artifact (entity, [pattern] $\rightarrow$)}
+
+    Pattern: $wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq$\\
+      Costs about ten Charged Amethysts.\\
+
+
+  \label{sec: patterns/spells/hexcasting@hexcasting:recharge}
+\subsubsection*{Recharge Item (entity $\rightarrow$)}
+
+    Pattern: $qqqqqwaeaeaeaeaea$\\
+      Recharge a media-containing item in my other hand. Costs about one Amethyst Shard.\\
+
+
+  
+    This spell is cast in a similar method to the crafting spells; an entity representing a dropped stack of Amethyst is provided, and recharges the media battery of the item in my other hand.\\This spell cannot recharge the item farther than its original battery size.\\
+
+
+  \label{sec: patterns/spells/hexcasting@hexcasting:erase}
+\subsubsection*{Erase Item}
+
+    Pattern: $qdqawwaww$\\
+      Clear a Hex-containing item in my other hand. Costs about one Amethyst Dust.\\
+
+
+  
+    The spell will also void all the media stored inside the item, releasing it back to Nature and returning the item to a perfectly clean slate. This way, I can re-use Trinkets I have put an erroneous spell into, for example.\\This also works to clear a Focus or Spellbook page, unsealing them in the process.\\
+
+\newpage
+
+\label{sec:patterns/spells/sentinels}
+\subsection*{Sentinels}
+
+
+  
+    Hence, away! Now all is well,
+
+One aloof stand sentinel.\\A Sentinel is a mysterious force I can summon to assist in the casting of Hexes, like a familiar or guardian spirit. It appears as a spinning geometric shape to my eyes, but is invisible to everyone else.\\
+
+
+  
+    It has several interesting properties:\\It does not appear to be tangible; no one can touch it.\\Only my Hexes can interact with it.\\Once summoned, it stays in place until banished.\\I am always able to see it if I$\rq$m close enough, even through solid objects.\\
+
+
+  \label{sec: patterns/spells/sentinels@hexcasting:sentinel/create}
+\subsubsection*{Summon Sentinel (vector $\rightarrow$)}
+
+    Pattern: $waeawae$\\
+      Summons my sentinel at the given position. Costs about one Amethyst Dust.\\
+
+
+  \label{sec: patterns/spells/sentinels@hexcasting:sentinel/destroy}
+\subsubsection*{Banish Sentinel}
+
+    Pattern: $qdwdqdw$\\
+      Banish my sentinel, and remove it from the world. Costs a negligible amount of media.\\
+
+
+  \label{sec: patterns/spells/sentinels@hexcasting:sentinel/get_pos}
+\subsubsection*{Locate Sentinel ($\rightarrow$ vector)}
+
+    Pattern: $waeawaede$\\
+      Add the position of my sentinel to the stack, or Null if it isn$\rq$t summoned. Costs a negligible amount of media.\\
+
+
+  \label{sec: patterns/spells/sentinels@hexcasting:sentinel/wayfind}
+\subsubsection*{Wayfind Sentinel (vector $\rightarrow$ vector)}
+
+    Pattern: $waeawaedwa$\\
+      Transform the position vector on the top of the stack into a unit vector pointing from that position to my sentinel, or Null if it isn$\rq$t summoned. Costs a negligible amount of media.\\
+
+\newpage
+
+\label{sec:patterns/spells/colorize}
+\subsection*{Internalize Pigment}
+
+
+  \label{sec: patterns/spells/colorize@hexcasting:colorize}
+\subsubsection*{Internalize Pigment}
+
+    Pattern: $awddwqawqwawq$\\
+      I must be holding a Pigment in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind$\rq$s coloration (at least, until I cast the spell again). Costs about one Amethyst Dust.\\
+
+\newpage
+
+\label{sec:patterns/spells/flight}
+\subsection*{Flight}
+
+
+  
+    Although it seems that true, limitless flight is out of my grasp, I have nonetheless found some methods of holding one in the sky, each with their respective drawbacks.\\All forms produce a shimmer of excess media; as the spell gets closer to ending, the sparks are shot through with more red and black.\\
+
+
+  
+    Other forms of flight do exist, of course. For example, a combination of Impulse and Blue Sun$\rq$s Nadir has been used since antiquity for a flight of sorts.\\I$\rq$ve also heard tell of a thin membrane worn on the back that allows the ability to glide. From my research, I believe the Great spell Altiora may be used to mimic it.\\
+
+
+  \label{sec: patterns/spells/flight@hexcasting:flight/range}
+\subsubsection*{Anchorite$\rq$s Flight (entity, number $\rightarrow$)}
+
+    Pattern: $awawaawq$\\
+      A flight limited in its range.\\
+
+
+  
+    The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of media marks the origin point of the safe zone. \\Costs about 1 Amethyst Dust per meter of safety.\\
+
+
+  \label{sec: patterns/spells/flight@hexcasting:flight/time}
+\subsubsection*{Wayfarer$\rq$s Flight (entity, number $\rightarrow$)}
+
+    Pattern: $dwdwdewq$\\
+      A flight limited in its duration.\\
+
+
+  
+    The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. \\It is relatively expensive at about 1 Charged Crystal per second of flight; I believe it is best suited for travel.\\
+
+\newpage
+
+\label{sec:patterns/great_spells}
+
+\section*{Great Spells}
+  The spells catalogued here are purported to be of legendary difficulty and power. They seem to have been recorded only sparsely (for good reason, the texts claim). It$\rq$s probably just the ramblings of extinct traditionalists, though -- a pattern$\rq$s a pattern.\\What could possibly go wrong?\\
+
+
+
+\label{sec:patterns/great_spells/create_lava}
+\subsection*{Create Lava}
+
+
+  \label{sec: patterns/great_spells/create_lava@hexcasting:create_lava}
+\subsubsection*{Create Lava (vector $\rightarrow$)}
+
+    Pattern: $eaqawqadaqd$\\
+      Summon a block of lava (or insert up to a bucket$\rq$s worth) into a block at the given position. Costs about one Charged Amethyst.\\
+
+
+  
+    It may be advisable to keep my knowledge of this spell secret. A certain faction of botanists get... touchy about it, or so I$\rq$ve heard.\\Well, no one said tracing the deep secrets of the universe was going to be an easy time.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/zeniths}
+\subsection*{Zeniths}
+
+
+  
+    This family of spells all impart a positive potion effect upon an entity, similar to the Nadirs. However, these have their media costs increase with the cube of the potency.\\
+
+
+  \label{sec: patterns/great_spells/zeniths@hexcasting:potion/regeneration}
+\subsubsection*{White Sun$\rq$s Zenith (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqqqaawawaedd$\\
+      Bestows regeneration. Base cost is one Amethyst Dust per second.\\
+
+
+  \label{sec: patterns/great_spells/zeniths@hexcasting:potion/night_vision}
+\subsubsection*{Blue Sun$\rq$s Zenith (entity, number $\rightarrow$)}
+
+    Pattern: $qqqaawawaeqdd$\\
+      Bestows night vision. Base cost is one Amethyst Dust per 5 seconds.\\
+
+
+  \label{sec: patterns/great_spells/zeniths@hexcasting:potion/absorption}
+\subsubsection*{Black Sun$\rq$s Zenith (entity, number, number $\rightarrow$)}
+
+    Pattern: $qqaawawaeqqdd$\\
+      Bestows absorption. Base cost is one Amethyst Dust per second.\\
+
+
+  \label{sec: patterns/great_spells/zeniths@hexcasting:potion/haste}
+\subsubsection*{Red Sun$\rq$s Zenith (entity, number, number $\rightarrow$)}
+
+    Pattern: $qaawawaeqqqdd$\\
+      Bestows haste. Base cost is one Amethyst Dust per 3 seconds.\\
+
+
+  \label{sec: patterns/great_spells/zeniths@hexcasting:potion/strength}
+\subsubsection*{Green Sun$\rq$s Zenith (entity, number, number $\rightarrow$)}
+
+    Pattern: $aawawaeqqqqdd$\\
+      Bestows strength. Base cost is one Amethyst Dust per 3 seconds.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/weather_manip}
+\subsection*{Weather Manipulation}
+
+
+  \label{sec: patterns/great_spells/weather_manip@hexcasting:lightning}
+\subsubsection*{Summon Lightning (vector $\rightarrow$)}
+
+    Pattern: $waadwawdaaweewq$\\
+      I command the heavens! This spell will summon a bolt of lightning to strike the earth where I direct it. Costs about three Amethyst Shards.\\
+
+
+  \label{sec: patterns/great_spells/weather_manip@hexcasting:summon_rain}
+\subsubsection*{Summon Rain}
+
+    Pattern: $wwweeewwweewdawdwad$\\
+      I control the clouds! This spell will summon rain across the world I cast it upon. Costs about one Charged Amethyst. Does nothing if it is already raining.\\
+
+
+  \label{sec: patterns/great_spells/weather_manip@hexcasting:dispel_rain}
+\subsubsection*{Dispel Rain}
+
+    Pattern: $eeewwweeewwaqqddqdqd$\\
+      A counterpart to summoning rain. This spell will dispel rain across the world I cast it upon. Costs about one Amethyst Shard. Does nothing if the skies are already clear.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/altiora}
+\subsection*{Altiora}
+
+
+  \label{sec: patterns/great_spells/altiora@hexcasting:flight}
+\subsubsection*{Altiora (player $\rightarrow$)}
+
+    Pattern: $eawwaeawawaa$\\
+      Summon a sheaf of media about me in the shape of wings, endowed with enough substance to allow gliding.\\
+
+
+  
+    Using them is identical to using Elytra; the target (which must be a player) is lofted into the air, after which pressing Jump will deploy the wings. The wings are fragile, and break upon touching any surface. Longer flights may benefit from Impulse or (for the foolhardy) Fireworks.\\Costs about one Charged Crystal.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/teleport}
+\subsection*{Greater Teleport}
+
+
+  \label{sec: patterns/great_spells/teleport@hexcasting:teleport/great}
+\subsubsection*{Greater Teleport (entity, vector $\rightarrow$)}
+
+    Pattern: $wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq$\\
+      Far more powerful than Blink, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is much greater than the normal radius of influence I am used to.\\
+
+
+  
+    The entity will be teleported by the given vector, which is an offset from its given position. No matter the distance, it always seems to cost about ten Charged Amethyst.\\The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn$\rq$t quite stay attached, and tends to splatter everywhere at the destination. In addition, the target will be forcibly removed from anything inanimate they are riding or sitting on ... but I$\rq$ve read scraps that suggest animals can come along for the ride, so to speak.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/greater_sentinel}
+\subsection*{Summon Greater Sentinel}
+
+
+  \label{sec: patterns/great_spells/greater_sentinel@hexcasting:sentinel/create/great}
+\subsubsection*{Summon Greater Sentinel (vector $\rightarrow$)}
+
+    Pattern: $waeawaeqqqwqwqqwq$\\
+      Summon a greater version of my Sentinel. Costs about two Amethyst Dust.\\
+
+
+  
+    The stronger sentinel acts like the normal one I can summon without the use of a Great Spell, if a little more visually interesting. However, the range in which my spells can work is extended to a small region around my greater sentinel, about 16 blocks. In other words, no matter where in the world I am, I can interact with things around my sentinel (the mysterious forces of chunkloading notwithstanding).\\
+
+\newpage
+
+\label{sec:patterns/great_spells/make_battery}
+\subsection*{Craft Phial}
+
+
+  \label{sec: patterns/great_spells/make_battery@hexcasting:craft/battery}
+\subsubsection*{Craft Phial (entity $\rightarrow$)}
+
+    Pattern: $aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw$\\
+      Infuse a bottle with media to form a Phial.\\
+
+
+  
+    Similarly to the spells for Crafting Casting Items, I must hold a Glass Bottle in my other hand, and provide the spell with a dropped stack of Amethyst. See this page for more information.\\Costs about one Charged Amethyst.\\
+
+\newpage
+
+\label{sec:patterns/great_spells/brainsweep}
+\subsection*{Flay Mind}
+
+
+  \label{sec: patterns/great_spells/brainsweep@hexcasting:brainsweep}
+\subsubsection*{Flay Mind (entity, vector $\rightarrow$)}
+
+    Pattern: $qeqwqwqwqwqeqaeqeaqeqaeqaqded$\\
+      I cannot make heads or tails of this spell... To be honest, I$\rq$m not sure I want to know what it does.\\
+
+\newpage
+
+
+
+
+
+\bigskip
+
+Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft. \\
+Minecraft content and materials are the intellectual property of their respective owners. \\
+Made with love using \href{https://pypi.org/project/hexdoc/}{hexdoc}
+
+\end{document}

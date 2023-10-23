@@ -202,7 +202,7 @@ class I18n(HexdocModel):
             raise KeyError(message)
 
         logging.getLogger(__name__).error(message)
-        return LocalizedStr.skip_i18n(keys[0])
+        return LocalizedStr.skip_i18n(keys[0].replace("&#39;", "'"))
 
     def localize_pattern(self, op_id: ResourceLocation) -> LocalizedStr:
         """Localizes the given pattern id (internal name, eg. brainsweep).

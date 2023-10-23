@@ -2,7 +2,5 @@
 
 {% block inner_body %}
   {{ super() }}
-  <h4 class="linkout">
-    <a href="{{ page.url }}">{{ page.link_text }}</a>
-  </h4>
+  \href{ {{ page.url }} }{ {{ page.link_text }} }
 {% endblock inner_body %}

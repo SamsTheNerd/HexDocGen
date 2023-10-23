@@ -2,6 +2,12 @@
 {% import "macros/recipes.html.jinja" as recipe_macros with context %}
 
 {% block inner_body %}
-  {{ recipe_macros.crafting_table(page.recipes) }}
+  {# {{ recipe_macros.crafting_table(page.recipes) }} #}
+  depicted in the book: crafting recipe for 
+  {% for recipe in page.recipes %}
+    {{ recipe.result.item.name }}
+    {% if not loop.last %}, {% endif %}
+  {% endfor %}\\
+
   {{ super() }}
 {% endblock inner_body %}

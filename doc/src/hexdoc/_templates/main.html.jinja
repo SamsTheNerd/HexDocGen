@@ -1,61 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>{{ _("hexdoc."~props.modid~".title") }}</title>
-    <link rel="icon shortcut apple-touch-icon" href="{{ icon_href }}">
+\documentclass[12pt]{article}
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ _('hexdoc.'~props.modid~'.description') }}" />
-    <meta name="author" content="{{ author }}" />
+\usepackage{xeCJK}
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ _('hexdoc.'~props.modid~'.title') }}" />
-    <meta property="og:image" content="{{ page_url }}/{{ icon_href }}" />
-    <meta property="og:url" content="{{ page_url }}" />
-    <meta property="og:description" content="{{ _('hexdoc.'~props.modid~'.description') }}" />
-    <meta property="og:site_name" content="{{ mod_name }}" />
+\usepackage{hyperref}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+{# \graphicspath{{'{{Images/}}'}} #}
+{# \graphicspath{{'{{images/}}'}} #}
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+%\fontsize{font size}{vertsize (usually 1.2x)}\selectfont
 
-    <link rel="stylesheet" href="{{ page_url }}/index.css">
+\begin{document}
 
-    <noscript>
-      <style>
-        /* for accessibility */
-        .spoilered {
-          filter: none !important;
-        }
-      </style>
-    </noscript>
+{# {% include "components/navbar.html.jinja" +%} #}
 
-    <script type="module">
-      {% filter indent(6) %}
-      {%+ include "main.js.jinja" %}
-      {% endfilter %}
-    </script>
-  </head>
 
-  <body>
-    {% include "components/navbar.html.jinja" +%}
-    {% include "components/welcome.html.jinja" +%}
-    {% include "book.html.jinja" +%}
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">
-          Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.<br />
-          Minecraft content and materials are the intellectual property of their respective owners.<br />
-          Made with ❤️ using <a href="https://pypi.org/project/hexdoc/" target="_blank">hexdoc</a>
-        </p>
-      </div>
-    </footer>
-  </body>
+{% filter replace("#", "\\#") %}
+{% filter replace("'", "$\\rq$")%}
+{% filter replace('"', "$\\rq\\rq$")%}
+{% filter replace("→", "$\\rightarrow$")%}
+{% filter safe %}
+  {% include "components/welcome.html.jinja" +%}
+  {% include "book.html.jinja" +%}
+{% endfilter %}
+{% endfilter %}
+{% endfilter %}
+{% endfilter %}
+{% endfilter %}
 
-</html>
+
+\bigskip
+
+Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft. \\
+Minecraft content and materials are the intellectual property of their respective owners. \\
+Made with love using \href{https://pypi.org/project/hexdoc/}{hexdoc}
+
+\end{document}
